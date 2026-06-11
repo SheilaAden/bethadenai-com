@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ─────────────────────────────────────────────
+   BETH ADEN AI — BRAND DESIGN TOKENS
+   Tailwind v4 @theme syntax
+   ───────────────────────────────────────────── */
+
+@theme {
+  /* ── Brand Colors ── */
+  --color-navy:     #0B1F33;   /* Midnight Navy   — primary background, headings  */
+  --color-graphite: #2E3A46;   /* Graphite        — secondary dark surfaces        */
+  --color-silver:   #E8EDF2;   /* Silver Mist     — light background sections      */
+  --color-teal:     #00B8AE;   /* Strategic Teal  — CTAs, highlights, links        */
+  --color-gold:     #C8A96B;   /* Executive Gold  — accent, pull quotes            */
+  --color-cloud:    #F8FAFC;   /* Cloud White     — page background, cards         */
+
+  /* ── Brand Fonts ──
+     CSS vars set on <html> by next/font/google.
+     Tailwind utilities: font-heading, font-body */
+  --font-heading: var(--font-montserrat);
+  --font-body:    var(--font-inter);
+
+  /* ── Spacing Scale (section padding) ──
+     Desktop: 96px  |  Mobile: 64px
+     Used as: py-section-desktop, py-section-mobile */
+  --spacing-section-desktop: 96px;
+  --spacing-section-mobile:  64px;
+}
+
+/* ─────────────────────────────────────────────
+   BASE STYLES
+   ───────────────────────────────────────────── */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #F8FAFC;        /* cloud */
+  color: #0B1F33;                   /* navy  */
+  font-family: var(--font-inter, ui-sans-serif, system-ui, sans-serif);
+  font-size: 1rem;                  /* 16px */
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY BASE
+   H1–H3 use Montserrat SemiBold (600)
+   H4–H6 use Montserrat Medium (500)
+   Body  uses Inter Regular (400)
+   ───────────────────────────────────────────── */
+
+h1, h2, h3 {
+  font-family: var(--font-montserrat, ui-sans-serif, system-ui, sans-serif);
+  font-weight: 600;
+  line-height: 1.15;
+  /*
+   * NO color set here.
+   * Color comes from body (inherits #0B1F33) on light sections,
+   * or from explicit text-white / text-silver utility classes on dark sections.
+   * Explicit class selectors always beat inheritance — no @layer conflict needed.
+   */
+}
+
+h4, h5, h6 {
+  font-family: var(--font-montserrat, ui-sans-serif, system-ui, sans-serif);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* ─────────────────────────────────────────────
+   FOCUS STYLES
+   Accessible focus rings using brand teal
+   ───────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid #00B8AE;
+  outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────
+   PROSE OVERRIDES (article body)
+   @tailwindcss/typography — brand color adjustments
+   Applied via: prose class on article wrappers
+   ───────────────────────────────────────────── */
+
+.prose {
+  --tw-prose-body:        #2E3A46;
+  --tw-prose-headings:    #0B1F33;
+  --tw-prose-links:       #00B8AE;
+  --tw-prose-bold:        #0B1F33;
+  --tw-prose-hr:          #E8EDF2;
+  --tw-prose-quotes:      #0B1F33;
+  --tw-prose-quote-borders: #C8A96B;
+  --tw-prose-captions:    #2E3A46;
+  --tw-prose-code:        #0B1F33;
+  --tw-prose-th-borders:  #E8EDF2;
+  --tw-prose-td-borders:  #E8EDF2;
+}
