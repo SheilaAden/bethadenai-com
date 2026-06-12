@@ -41,6 +41,19 @@ export function Footer() {
             <p className="mt-3 text-sm text-silver/80 leading-relaxed">
               AI visibility strategy, GEO, AEO, and implementation for small businesses.
             </p>
+            <address className="not-italic mt-4 space-y-1.5">
+              <p className="text-sm">
+                <a
+                  href="mailto:saden.aiartist@gmail.com"
+                  className="text-teal hover:text-white transition-colors"
+                >
+                  saden.aiartist@gmail.com
+                </a>
+              </p>
+              <p className="text-sm text-silver/60">
+                United States &mdash; Virtual &amp; Remote Nationwide
+              </p>
+            </address>
             <p className="mt-4 text-sm text-silver/80">
               <Link href="/contact" className="text-teal hover:text-white transition-colors font-medium">
                 Get in touch →
