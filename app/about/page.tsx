@@ -155,6 +155,16 @@ const faqItems: FAQItem[] = [
   },
 ]
 
+const credentials = [
+  'Completed Introduction to Claude Cowork',
+  'Completed Claude Code 101',
+  'Completed Claude 101',
+  'Creator of AI Visibility OS™',
+  'Creator of Beth Aden AI Visibility Framework™',
+  'Builder of custom GPTs, AI workflows, and business systems',
+  'Practical AI adoption and workflow strategist',
+]
+
 /* ─────────────────────────────────────────────
    PAGE
    ───────────────────────────────────────────── */
@@ -383,6 +393,34 @@ export default function AboutPage() {
                 why. I don&#39;t operate as a black box. When changes are made to your structured data, your
                 content, or your digital presence, you&#39;ll understand what changed, what it&#39;s intended to
                 do, and how to maintain it.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ── Credentials & Applied AI Training ── */}
+      <Section background="silver">
+        <Container>
+          <div className="max-w-3xl">
+            <SectionLabel>Applied AI Training</SectionLabel>
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy mt-2 mb-2">
+              Credentials &amp; Applied AI Training
+            </h2>
+            <div className="w-10 h-[2px] bg-gold/60 mb-6" aria-hidden="true" />
+            <ul className="space-y-3 mb-8">
+              {credentials.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gold/60 mt-1.5" aria-hidden="true" />
+                  <span className="text-base text-graphite leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="border-l-4 border-gold/40 pl-5 py-1">
+              <p className="text-base text-graphite leading-relaxed">
+                Beth&rsquo;s work combines applied AI training with hands-on implementation across
+                visibility strategy, workflow systems, custom GPTs, business operations, and
+                practical AI adoption for non-technical business owners.
               </p>
             </div>
           </div>

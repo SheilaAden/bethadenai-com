@@ -172,6 +172,75 @@ const faqItems: FAQItem[] = [
   },
 ]
 
+const proofColumns = [
+  {
+    title: 'Built',
+    items: [
+      'AI Visibility OS™',
+      'Proofmaster™ distillery calculator platform',
+      'Custom GPT and workflow systems',
+      'AI visibility audit framework',
+    ],
+  },
+  {
+    title: 'Implemented',
+    items: [
+      'AI-assisted business planning',
+      'Distillery marketing and investor materials',
+      'Client AI training and adoption support',
+      'Workflow documentation and operational systems',
+    ],
+  },
+  {
+    title: 'Validated',
+    items: [
+      'Client recommendations',
+      'Claude training completed',
+      'Real business use cases',
+      'Founder-led implementation',
+    ],
+  },
+]
+
+// Rick Aden — DO NOT PUBLISH until quote receives final approval from Rick.
+// {
+//   quote: "Beth introduced me to practical AI tools for the distillery business, helping turn ideas into marketing materials, investor resources, product planning, and the Proofmaster calculator platform.",
+//   name: "Rick Aden",
+//   context: "Ozark Mountains Distillery",
+// },
+const testimonials = [
+  {
+    quote: 'Beth brings a rare combination of technical knowledge and practical application. Her training was immediately actionable and tailored to my business needs.',
+    name: 'Erin Mercer',
+    context: 'Legacy Practice Transitions',
+  },
+  {
+    quote: 'Beth built custom AI solutions tailored to my workflow that significantly improved efficiency and accuracy.',
+    name: 'Wendy Greenlee',
+    context: 'Jefferson County Courts',
+  },
+  {
+    quote: 'Beth helped elevate my overall marketing approach, enhancing visibility, branding, and client engagement.',
+    name: 'Patricia Carter',
+    context: 'Heartland Realty',
+  },
+]
+
+const caseStudies = [
+  {
+    title: 'Ozark Mountains Distillery',
+    challenge: 'A traditional distillery business needed stronger marketing assets, planning support, operational tools, and practical AI adoption.',
+    solution: 'Beth introduced AI-assisted planning, content development, investor materials, product support, workflow systems, and Proofmaster™ calculator development.',
+    outcome: 'Created investor-ready materials, marketing systems, practical operating support, and a specialized calculator platform for distillery workflows.',
+  },
+  {
+    title: 'AI Visibility OS™',
+    challenge: 'Businesses needed a practical way to understand how AI systems evaluate, understand, and recommend them.',
+    solution: 'Beth developed AI Visibility OS™ to assess entity clarity, AI discoverability, authority signals, content visibility, and recommendation readiness.',
+    outcome: 'The platform produces structured AI visibility assessments with prioritized recommendations businesses can act on.',
+  },
+]
+
 /* ─────────────────────────────────────────────
    PAGE COMPONENT
    ───────────────────────────────────────────── */
@@ -647,6 +716,104 @@ export default function Home() {
           </div>
           </div>
 
+        </Container>
+      </Section>
+
+      {/* ── Proof & Results ── */}
+      <Section background="white">
+        <Container>
+          <SectionLabel>Proof &amp; Results</SectionLabel>
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy leading-tight mt-2 mb-2">
+            Built Systems. Real Work. Practical AI Adoption.
+          </h2>
+          <div className="w-10 h-[2px] bg-gold/60 mb-6" aria-hidden="true" />
+          <p className="text-base text-graphite leading-relaxed max-w-2xl mb-12">
+            Beth Aden AI is built from hands-on implementation — not theory. From custom AI tools
+            and business workflows to visibility audits, training, and real client support, the work
+            is grounded in systems people can actually use.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+            {proofColumns.map((col) => (
+              <div key={col.title} className="border-t-2 border-gold pt-5">
+                <p className="text-xs font-heading font-semibold uppercase tracking-[0.15em] text-gold mb-4">
+                  {col.title}
+                </p>
+                <ul className="space-y-2.5">
+                  {col.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-graphite leading-relaxed">
+                      <span className="flex-shrink-0 w-1 h-1 rounded-full bg-teal mt-2" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* ── Client Feedback ── */}
+      <Section background="silver">
+        <Container>
+          <SectionLabel>Client Feedback</SectionLabel>
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy leading-tight mt-2 mb-10">
+            What Clients Say About Working With Beth
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {testimonials.map((t) => (
+              <figure key={t.name} className="bg-cloud rounded-xl p-6 border border-silver shadow-sm flex flex-col">
+                <span className="text-3xl font-heading text-gold/60 leading-none mb-3 select-none" aria-hidden="true">
+                  &ldquo;
+                </span>
+                <blockquote className="text-sm text-graphite leading-relaxed flex-grow mb-5">
+                  {t.quote}
+                </blockquote>
+                <figcaption className="border-t border-silver pt-4 mt-auto">
+                  <p className="font-heading font-semibold text-sm text-navy">{t.name}</p>
+                  <p className="text-xs text-teal mt-0.5">{t.context}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* ── Selected Work ── */}
+      <Section background="white">
+        <Container>
+          <SectionLabel>Selected Work</SectionLabel>
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy leading-tight mt-2 mb-10">
+            AI Systems Built for Real Business Problems
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl">
+            {caseStudies.map((cs) => (
+              <article key={cs.title} className="bg-cloud rounded-xl p-6 md:p-8 border border-silver shadow-sm">
+                <h3 className="font-heading font-semibold text-lg text-navy mb-5 pb-4 border-b border-silver">
+                  {cs.title}
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.15em] text-teal mb-1.5">
+                      Challenge
+                    </p>
+                    <p className="text-sm text-graphite leading-relaxed">{cs.challenge}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.15em] text-teal mb-1.5">
+                      Solution
+                    </p>
+                    <p className="text-sm text-graphite leading-relaxed">{cs.solution}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.15em] text-gold mb-1.5">
+                      Outcome
+                    </p>
+                    <p className="text-sm text-graphite leading-relaxed">{cs.outcome}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </Container>
       </Section>
 
