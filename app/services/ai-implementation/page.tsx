@@ -70,6 +70,12 @@ const implementationSchema = {
       name: 'Beth Aden AI',
       url: 'https://bethadenai.com',
     },
+    {
+      '@type': 'Person',
+      '@id': 'https://bethadenai.com/about#person',
+      name: 'Beth Aden',
+      jobTitle: 'AI Visibility Strategist',
+    },
   ],
 }
 
@@ -131,7 +137,7 @@ const processSteps = [
   {
     number: '01',
     title: 'Pre-Implementation Review',
-    body: "The engagement begins with a review of your strategy roadmap and a scoping conversation. Beth reviews the strategy in full, confirms the priority sequence with your current business context, and establishes the implementation plan: which actions will be addressed in which order, what each phase of the engagement covers, and what your involvement will look like throughout.\n\nIf anything in your situation has changed since the strategy was completed — new services, new platforms, business model changes — this is when those changes are factored into the implementation plan.",
+    body: "The engagement begins with a review of your strategy roadmap and a scoping conversation. Beth Aden reviews the strategy in full, confirms the priority sequence with your current business context, and establishes the implementation plan: which actions will be addressed in which order, what each phase of the engagement covers, and what your involvement will look like throughout.\n\nIf anything in your situation has changed since the strategy was completed — new services, new platforms, business model changes — this is when those changes are factored into the implementation plan.",
   },
   {
     number: '02',
@@ -752,7 +758,7 @@ export default function AIImplementationPage() {
                 Book a Discovery Call
               </Link>
               <p className="text-sm text-silver/70">
-                Beth reviews every inquiry personally and responds within 1–2 business days.
+                Beth Aden reviews every inquiry personally and responds within 1–2 business days.
               </p>
               <Link
                 href="/services"

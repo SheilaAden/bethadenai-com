@@ -84,6 +84,12 @@ const servicesSchema = {
       name: 'Beth Aden AI',
       url: 'https://bethadenai.com',
     },
+    {
+      '@type': 'Person',
+      '@id': 'https://bethadenai.com/about#person',
+      name: 'Beth Aden',
+      jobTitle: 'AI Visibility Strategist',
+    },
   ],
 }
 
@@ -201,7 +207,7 @@ const auditDeliverables = [
   },
   {
     title: '60-Minute Walkthrough Session',
-    body: 'A session with Beth to review your report together, answer questions, and make sure you leave with a clear understanding of your findings and next steps.',
+    body: 'A session with Beth Aden to review your report together, answer questions, and make sure you leave with a clear understanding of your findings and next steps.',
   },
 ]
 
@@ -853,7 +859,7 @@ export default function ServicesPage() {
               </Link>
             </div>
             <p className="mt-4 text-sm text-graphite/70">
-              Beth reviews every inquiry personally and responds within 1–2 business days.
+              Beth Aden reviews every inquiry personally and responds within 1–2 business days.
             </p>
           </div>
         </Container>

@@ -76,6 +76,12 @@ const auditSchema = {
       name: 'Beth Aden AI',
       url: 'https://bethadenai.com',
     },
+    {
+      '@type': 'Person',
+      '@id': 'https://bethadenai.com/about#person',
+      name: 'Beth Aden',
+      jobTitle: 'AI Visibility Strategist',
+    },
   ],
 }
 
@@ -142,7 +148,7 @@ const processSteps = [
   {
     number: '02',
     title: 'Assessment',
-    body: "Beth conducts the full audit — reviewing your entity presence, structured data, website content, cross-source consistency, authoritative mentions, and direct AI platform testing. This is where the depth of the analysis happens. You don't need to be involved during this phase.",
+    body: "Beth Aden conducts the full audit — reviewing your entity presence, structured data, website content, cross-source consistency, authoritative mentions, and direct AI platform testing. This is where the depth of the analysis happens. You don't need to be involved during this phase.",
   },
   {
     number: '03',
@@ -371,6 +377,12 @@ export default function AIVisibilityAuditPage() {
                 The result is a clear, documented baseline. You&#39;ll know exactly where your business
                 stands in AI search, which gaps are costing you visibility, and what to prioritize to
                 change it.
+              </p>
+              <p className="text-base text-graphite leading-relaxed border-l-4 border-gold pl-6 py-1">
+                The AI Visibility Audit is built on the Beth Aden AI Visibility Framework&#8482; — a
+                structured methodology developed by Beth Aden through direct implementation experience.
+                Every assessment area, every finding, and every recommendation follows the Framework&#39;s
+                approach to AI visibility as a system, not a checklist.
               </p>
             </div>
           </div>
@@ -731,7 +743,7 @@ export default function AIVisibilityAuditPage() {
                 Get Your AI Visibility Audit
               </Link>
               <p className="text-sm text-silver/70">
-                Beth reviews every inquiry personally and responds within 1–2 business days.
+                Beth Aden reviews every inquiry personally and responds within 1–2 business days.
               </p>
               <Link
                 href="/services"

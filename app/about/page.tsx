@@ -54,6 +54,7 @@ const aboutSchema = {
       '@id': 'https://bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
+      description: 'Founder of Beth Aden AI, creator of AI Visibility OS™ and the Beth Aden AI Visibility Framework™. AI Visibility Strategist helping small businesses become findable, understandable, and recommendable in AI search.',
       worksFor: {
         '@id': 'https://bethadenai.com/#organization',
       },
@@ -67,6 +68,8 @@ const aboutSchema = {
         'Entity Definition and Establishment',
         'AI Implementation',
         'Business Process Improvement',
+        'AI Visibility OS™',
+        'Beth Aden AI Visibility Framework™',
       ],
     },
     {
@@ -74,6 +77,7 @@ const aboutSchema = {
       '@id': 'https://bethadenai.com/#organization',
       name: 'Beth Aden AI',
       url: 'https://bethadenai.com',
+      description: 'AI visibility consulting practice founded by Beth Aden. Services are delivered using the Beth Aden AI Visibility Framework™, a structured methodology for AI visibility assessment, strategy, and implementation.',
       founder: {
         '@id': 'https://bethadenai.com/about#person',
       },
@@ -265,8 +269,14 @@ export default function AboutPage() {
                 at all.
               </p>
               <p className="text-base text-graphite leading-relaxed">
-                That&#39;s when I started building the methodology that became the AI Visibility Audit. And
-                that&#39;s when Beth Aden AI became a real practice rather than an internal experiment.
+                That work — running my own businesses through structured AI assessments, documenting what
+                AI systems found and what they missed — became the foundation for AI Visibility OS&#8482;,
+                the assessment platform I built to evaluate AI visibility systematically. The methodology I
+                developed through that process became the Beth Aden AI Visibility Framework&#8482;, the
+                structured approach that powers the audit, the strategy, and every engagement at Beth Aden AI.
+              </p>
+              <p className="text-base text-graphite leading-relaxed">
+                That&#39;s when Beth Aden AI became a real practice rather than an internal experiment.
               </p>
             </div>
           </div>

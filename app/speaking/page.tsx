@@ -54,6 +54,7 @@ const speakingSchema = {
       '@id': 'https://bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
+      description: 'Founder of Beth Aden AI, creator of AI Visibility OS™ and the Beth Aden AI Visibility Framework™. AI Visibility Strategist and speaker on AI search, GEO, AEO, and practical AI adoption for small businesses.',
       worksFor: {
         '@id': 'https://bethadenai.com/#organization',
       },
@@ -66,6 +67,8 @@ const speakingSchema = {
         'Practical AI Adoption for Small Business',
         'Structured Data and Schema Markup',
         'Business Operations and AI Integration',
+        'AI Visibility OS™',
+        'Beth Aden AI Visibility Framework™',
       ],
     },
     {

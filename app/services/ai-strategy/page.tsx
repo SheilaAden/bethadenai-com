@@ -70,6 +70,12 @@ const strategySchema = {
       name: 'Beth Aden AI',
       url: 'https://bethadenai.com',
     },
+    {
+      '@type': 'Person',
+      '@id': 'https://bethadenai.com/about#person',
+      name: 'Beth Aden',
+      jobTitle: 'AI Visibility Strategist',
+    },
   ],
 }
 
@@ -140,7 +146,7 @@ const processSteps = [
   {
     number: '02',
     title: 'Gap Analysis and Prioritization',
-    body: "Beth reviews your audit findings in full and works through the gap prioritization process — evaluating each identified gap for impact and dependency. This is the analytical foundation of the engagement. The output of this phase is the Gap Priority Matrix that will drive the roadmap.",
+    body: "Beth Aden reviews your audit findings in full and works through the gap prioritization process — evaluating each identified gap for impact and dependency. This is the analytical foundation of the engagement. The output of this phase is the Gap Priority Matrix that will drive the roadmap.",
   },
   {
     number: '03',
@@ -743,7 +749,7 @@ export default function AIStrategyPage() {
                 Book a Discovery Call
               </Link>
               <p className="text-sm text-silver/70">
-                Beth reviews every inquiry personally and responds within 1–2 business days.
+                Beth Aden reviews every inquiry personally and responds within 1–2 business days.
               </p>
               <Link
                 href="/services"
