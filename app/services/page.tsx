@@ -349,10 +349,10 @@ export default function ServicesPage() {
         body="Not sure where to start? Most businesses start with the AI Visibility Audit — and the answer to 'where do I begin?' becomes clear from there."
         primaryCTA={{ text: 'Get Your AI Visibility Audit', href: '/services/ai-visibility-audit' }}
         secondaryCTA={{ text: '→ See all services ↓', href: '#services-overview' }}
-        background="navy"
+        background="silver"
         size="medium"
         rightContent={
-          <div className="w-full max-w-[340px] rounded-2xl border border-white/[0.1] bg-white/[0.04] p-6 shadow-[0_8px_48px_rgba(0,0,0,0.45)]">
+          <div className="w-full max-w-[340px] rounded-2xl bg-navy border border-teal/20 p-6 shadow-[0_8px_32px_rgba(0,184,174,0.10),0_4px_16px_rgba(11,31,51,0.15)]">
             <div className="pb-4 mb-5 border-b border-white/[0.08]">
               <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-teal mb-1.5">
                 The Path Forward
@@ -401,13 +401,13 @@ export default function ServicesPage() {
       </div>
 
       {/* ── SECTION 2: The Progression ── */}
-      <Section background="graphite">
+      <Section background="white">
         <Container>
-          <SectionLabel light>How the Services Work Together</SectionLabel>
-          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white mt-2 mb-4">
+          <SectionLabel>How the Services Work Together</SectionLabel>
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy mt-2 mb-4">
             A Complete Path from Invisible to Recommended
           </h2>
-          <p className="text-base md:text-lg text-silver leading-relaxed max-w-2xl">
+          <p className="text-base md:text-lg text-graphite leading-relaxed max-w-2xl">
             AI visibility isn&#39;t a single problem with a single fix. It&#39;s a progression — and each
             service at Beth Aden AI addresses a distinct phase of that progression. Understanding how they
             connect is the clearest way to understand where you belong.
@@ -417,7 +417,7 @@ export default function ServicesPage() {
           <div className="relative max-w-2xl mx-auto mt-12">
             {phases.map((phase, index) => (
               <div key={index}>
-                <div className="rounded-lg border border-white/20 bg-white/5 p-6 md:p-8">
+                <div className="rounded-lg border border-navy/[0.15] bg-navy p-6 md:p-8">
                   <p className="text-xs font-heading font-semibold uppercase tracking-[0.15em] text-teal mb-2">
                     {phase.label}
                   </p>
@@ -457,7 +457,7 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <p className="text-sm text-silver/80 text-center max-w-2xl mx-auto mt-8 leading-relaxed">
+          <p className="text-sm text-graphite/70 text-center max-w-2xl mx-auto mt-8 leading-relaxed">
             Not every business needs all three phases immediately. Some complete the audit and handle
             recommendations independently. Others move through the full sequence. The path is built around
             what your business actually needs — starting with an honest assessment of where you stand.
@@ -477,7 +477,7 @@ export default function ServicesPage() {
             {comparisonCards.map((card) => (
               <div
                 key={card.title}
-                className="bg-cloud rounded-lg p-6 flex flex-col border border-silver"
+                className="bg-cloud rounded-lg p-6 flex flex-col border border-silver shadow-sm"
               >
                 {/* Badge */}
                 {card.badge ? (

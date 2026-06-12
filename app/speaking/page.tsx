@@ -250,7 +250,7 @@ export default function SpeakingPage() {
         body="Beth Aden speaks to business owners, professional associations, and organizational groups on AI visibility, AI search behavior, and practical AI adoption for small and mid-sized businesses. Her talks are designed for the audience that actually runs businesses — not technical teams, not enterprise organizations, not AI enthusiasts. Business owners who need to understand what's happening and what to do about it."
         primaryCTA={{ text: 'Inquire About Speaking', href: '/contact' }}
         secondaryCTA={{ text: '→ See speaking topics ↓', href: '#speaking-topics' }}
-        background="navy"
+        background="silver"
         size="medium"
         rightContent={
           <Image
@@ -258,7 +258,7 @@ export default function SpeakingPage() {
             alt="Beth Aden, AI Visibility Strategist and founder of Beth Aden AI"
             width={480}
             height={560}
-            className="rounded-2xl border border-white/[0.1] shadow-[0_8px_48px_rgba(0,0,0,0.45)] object-cover w-full max-w-[420px]"
+            className="rounded-2xl border border-graphite/10 shadow-[0_8px_32px_rgba(11,31,51,0.12)] object-cover w-full max-w-[420px]"
             priority
           />
         }
@@ -339,7 +339,7 @@ export default function SpeakingPage() {
 
             {/* Aside — credibility signals, no fabricated data */}
             <div className="lg:col-span-2">
-              <div className="bg-silver rounded-lg p-6 border border-silver">
+              <div className="bg-silver rounded-lg p-6 shadow-sm">
                 <p className="text-xs font-heading font-semibold uppercase tracking-[0.15em] text-graphite/60 mb-4">
                   Speaking at a Glance
                 </p>
@@ -505,7 +505,7 @@ export default function SpeakingPage() {
             {audiences.map((audience, i) => (
               <div
                 key={i}
-                className={`bg-cloud rounded-lg p-6 border border-silver ${
+                className={`bg-cloud rounded-lg p-6 border border-silver shadow-sm ${
                   i === audiences.length - 1 && audiences.length % 2 !== 0
                     ? 'md:col-span-2 md:max-w-xl'
                     : ''
@@ -567,7 +567,7 @@ export default function SpeakingPage() {
             {formats.map((format, i) => (
               <div
                 key={i}
-                className={`bg-cloud rounded-lg p-6 border border-silver ${
+                className={`bg-cloud rounded-lg p-6 border border-silver shadow-sm ${
                   i === formats.length - 1 && formats.length % 3 !== 0
                     ? 'md:col-span-2 lg:col-span-1'
                     : ''
@@ -599,14 +599,14 @@ export default function SpeakingPage() {
       </Section>
 
       {/* ── SECTION 9: Booking Process ── */}
-      <Section background="graphite">
+      <Section background="silver">
         <Container>
           <div className="max-w-3xl">
-            <SectionLabel light>How to Book</SectionLabel>
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white mt-2 mb-4">
+            <SectionLabel>How to Book</SectionLabel>
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy mt-2 mb-4">
               What Happens When You Reach Out
             </h2>
-            <p className="text-base text-silver leading-relaxed mb-12">
+            <p className="text-base text-graphite leading-relaxed mb-12">
               Booking starts with a single inquiry. No lengthy forms, no automated qualification
               sequences. You describe your event, your audience, and what you&#39;re looking for. Beth
               reviews every inquiry herself and responds within 1–2 business days.
@@ -621,10 +621,10 @@ export default function SpeakingPage() {
                   >
                     {step.number}
                   </span>
-                  <h3 className="font-heading font-semibold text-lg text-white mb-3">
+                  <h3 className="font-heading font-semibold text-lg text-navy mb-3">
                     {step.heading}
                   </h3>
-                  <p className="text-sm text-silver leading-relaxed">{step.body}</p>
+                  <p className="text-sm text-graphite leading-relaxed">{step.body}</p>
                   {/* Connector line between steps */}
                   {i < bookingSteps.length - 1 && (
                     <div
@@ -636,8 +636,8 @@ export default function SpeakingPage() {
               ))}
             </div>
 
-            <div className="mt-10 p-5 bg-white/5 rounded-lg border border-white/10">
-              <p className="text-sm text-silver leading-relaxed">
+            <div className="mt-10 p-5 bg-cloud rounded-lg border border-graphite/10">
+              <p className="text-sm text-graphite leading-relaxed">
                 Confirmed speaking engagements are documented in writing before any commitment is
                 final — dates, format, topic, logistics, and any relevant terms.
               </p>

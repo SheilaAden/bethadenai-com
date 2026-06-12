@@ -295,19 +295,19 @@ export default function AIImplementationPage() {
       </div>
 
       {/* ── SECTION 2: The Problem ── */}
-      <Section background="graphite">
+      <Section background="white">
         <Container>
           <div className="max-w-3xl">
-            <SectionLabel light>Why Strategy Alone Isn&#39;t Enough</SectionLabel>
-            <h2 className="font-heading font-semibold text-2xl md:text-3xl text-white mt-2 mb-6">
+            <SectionLabel>Why Strategy Alone Isn&#39;t Enough</SectionLabel>
+            <h2 className="font-heading font-semibold text-2xl md:text-3xl text-navy mt-2 mb-6">
               Most AI Visibility Improvements Stall at the Planning Stage
             </h2>
             <div className="space-y-5">
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 This is the most common pattern in AI visibility work: a business gets an audit, receives
                 findings, develops a plan — and then the plan sits.
               </p>
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 Not because the business doesn&#39;t care. Not because the work isn&#39;t worth doing. But
                 because implementation is where the gap between knowing and doing gets widest. Structured
                 data needs to be written and deployed. Content needs to be restructured. Entity information
@@ -315,19 +315,19 @@ export default function AIImplementationPage() {
                 and validated. Each of these tasks is specific, technical in places, and dependent on
                 everything else being done in the right order.
               </p>
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 Without guided implementation support, most businesses do one of two things: they hand the
                 plan to a developer who implements the technical pieces without understanding the AI
                 visibility context, or they attempt to work through it independently and stall when the
                 complexity exceeds their available time or technical confidence.
               </p>
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 Both paths produce incomplete results. The structured data gets added but the content isn&#39;t
                 aligned with it. The content gets updated but the cross-platform consistency is still
                 broken. The work that does get done doesn&#39;t compound — because the pieces weren&#39;t
                 sequenced in the order that would let them reinforce each other.
               </p>
-              <p className="text-base text-white font-heading font-semibold leading-relaxed">
+              <p className="text-base text-navy font-heading font-semibold leading-relaxed">
                 This is exactly what AI Implementation at Beth Aden AI is designed to do.
               </p>
             </div>
@@ -390,7 +390,7 @@ export default function AIImplementationPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* Phase 1 — Audit */}
-            <div className="bg-cloud rounded-lg border border-silver p-6 flex flex-col">
+            <div className="bg-cloud rounded-lg border border-silver p-6 flex flex-col shadow-sm">
               <p className="text-xs font-heading font-semibold uppercase tracking-[0.12em] text-graphite/50 mb-2">
                 Phase One
               </p>
@@ -420,7 +420,7 @@ export default function AIImplementationPage() {
             </div>
 
             {/* Phase 2 — Strategy */}
-            <div className="bg-cloud rounded-lg border border-silver p-6 flex flex-col">
+            <div className="bg-cloud rounded-lg border border-silver p-6 flex flex-col shadow-sm">
               <p className="text-xs font-heading font-semibold uppercase tracking-[0.12em] text-graphite/50 mb-2">
                 Phase Two
               </p>
@@ -476,7 +476,7 @@ export default function AIImplementationPage() {
           </div>
 
           {/* Bridge paragraph — transparency moment, do not minimize */}
-          <div className="max-w-2xl bg-cloud rounded-lg border border-silver p-6">
+          <div className="max-w-2xl bg-cloud rounded-lg border border-silver p-6 shadow-sm">
             <p className="text-xs font-heading font-semibold uppercase tracking-[0.15em] text-graphite/60 mb-3">
               Why the Sequence Matters
             </p>
@@ -530,7 +530,7 @@ export default function AIImplementationPage() {
             {deliverables.map((item, i) => (
               <div
                 key={i}
-                className={`bg-cloud rounded-lg p-6 border border-silver ${
+                className={`bg-cloud rounded-lg p-6 border border-silver shadow-sm ${
                   i === deliverables.length - 1 && deliverables.length % 2 !== 0
                     ? 'md:col-span-2 md:max-w-xl'
                     : ''
@@ -555,13 +555,13 @@ export default function AIImplementationPage() {
       </Section>
 
       {/* ── SECTION 7: Process Overview ── */}
-      <Section background="graphite">
+      <Section background="silver">
         <Container>
           <div className="max-w-3xl">
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white mb-3">
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy mb-3">
               How the Engagement Works
             </h2>
-            <p className="text-base text-silver leading-relaxed mb-12">
+            <p className="text-base text-graphite leading-relaxed mb-12">
               The AI Implementation engagement is structured around your strategy roadmap. Every phase of
               the engagement maps to a phase of the roadmap — foundational work first, structural work
               second, growth-layer work third.
@@ -578,12 +578,12 @@ export default function AIImplementationPage() {
                     </span>
                   </div>
                   <div className="pt-1">
-                    <h3 className="font-heading font-semibold text-lg text-white mb-2">
+                    <h3 className="font-heading font-semibold text-lg text-navy mb-2">
                       {step.title}
                     </h3>
                     <div className="space-y-3">
                       {step.body.split('\n\n').map((para, j) => (
-                        <p key={j} className="text-base text-silver leading-relaxed">
+                        <p key={j} className="text-base text-graphite leading-relaxed">
                           {para}
                         </p>
                       ))}
@@ -648,7 +648,7 @@ export default function AIImplementationPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {outcomes.map((outcome, i) => (
-              <div key={i} className="bg-cloud rounded-lg p-6 border border-silver">
+              <div key={i} className="bg-cloud rounded-lg p-6 border border-silver shadow-sm">
                 <div
                   className="text-2xl font-heading font-semibold text-teal/30 mb-3"
                   aria-hidden="true"
@@ -690,7 +690,7 @@ export default function AIImplementationPage() {
             The Full Path
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-            <div className="bg-cloud rounded-lg p-6 border border-silver">
+            <div className="bg-cloud rounded-lg p-6 border border-silver shadow-sm">
               <p className="text-xs font-heading font-semibold uppercase tracking-[0.12em] text-graphite/50 mb-2">
                 Where to Start
               </p>
@@ -710,7 +710,7 @@ export default function AIImplementationPage() {
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
-            <div className="bg-cloud rounded-lg p-6 border border-silver">
+            <div className="bg-cloud rounded-lg p-6 border border-silver shadow-sm">
               <p className="text-xs font-heading font-semibold uppercase tracking-[0.12em] text-graphite/50 mb-2">
                 The Plan That Makes Implementation Work
               </p>

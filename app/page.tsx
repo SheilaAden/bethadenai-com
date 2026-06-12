@@ -186,9 +186,9 @@ export default function Home() {
       />
 
       {/* ── SECTION 1: Hero ── */}
-      <section className="relative bg-navy overflow-hidden py-20 md:py-28">
+      <section className="relative bg-cloud overflow-hidden py-20 md:py-28">
 
-        {/* Subtle background: fine grid + radial vignette, no animations */}
+        {/* Subtle background: fine navy grid, no animations */}
         <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
           <svg
             width="100%"
@@ -198,15 +198,10 @@ export default function Home() {
           >
             <defs>
               <pattern id="hero-grid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
-                <path d="M48 0 L0 0 0 48" fill="none" stroke="rgba(255,255,255,0.055)" strokeWidth="0.5"/>
+                <path d="M48 0 L0 0 0 48" fill="none" stroke="rgba(11,31,51,0.05)" strokeWidth="0.5"/>
               </pattern>
-              <radialGradient id="hero-vignette" cx="30%" cy="50%" r="75%">
-                <stop offset="0%" stopColor="transparent"/>
-                <stop offset="100%" stopColor="#0B1F33" stopOpacity="0.8"/>
-              </radialGradient>
             </defs>
             <rect width="100%" height="100%" fill="url(#hero-grid)"/>
-            <rect width="100%" height="100%" fill="url(#hero-vignette)"/>
           </svg>
         </div>
 
@@ -215,13 +210,13 @@ export default function Home() {
 
             {/* ── Left: Headline, subheadline, copy, CTAs ── */}
             <div>
-              <h1 className="font-heading font-semibold text-4xl md:text-5xl text-white leading-tight mb-5">
+              <h1 className="font-heading font-semibold text-4xl md:text-5xl text-navy leading-tight mb-5">
                 Get Found. Get Understood. Get Recommended by AI.
               </h1>
-              <p className="text-xl md:text-2xl font-heading font-medium text-silver leading-snug mb-5">
+              <p className="text-xl md:text-2xl font-heading font-medium text-graphite leading-snug mb-5">
                 When customers ask AI who to call, will your business come up?
               </p>
-              <p className="text-base md:text-lg text-silver/80 leading-relaxed mb-8">
+              <p className="text-base md:text-lg text-graphite/70 leading-relaxed mb-8">
                 Beth Aden AI helps businesses become visible, understandable, and recommendable
                 across AI search, answer engines, and automated decision systems.
               </p>
@@ -234,7 +229,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-heading font-semibold text-sm transition-colors border border-white/30 text-white hover:bg-white/10"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-md font-heading font-semibold text-sm transition-colors border border-navy/30 text-navy hover:bg-navy/5"
                 >
                   See How It Works
                 </Link>
@@ -243,7 +238,7 @@ export default function Home() {
 
             {/* ── Right: AI Visibility Audit Snapshot mock card (desktop only) ── */}
             <div className="hidden lg:flex justify-end">
-              <div className="w-full max-w-[340px] rounded-2xl border border-white/[0.1] bg-white/[0.04] p-6 shadow-[0_8px_48px_rgba(0,0,0,0.45)]">
+              <div className="w-full max-w-[340px] rounded-2xl bg-navy border border-teal/20 p-6 shadow-[0_8px_32px_rgba(0,184,174,0.12),0_4px_16px_rgba(11,31,51,0.15)]">
 
                 {/* Card header */}
                 <div className="pb-4 mb-5 border-b border-white/[0.08]">
@@ -397,7 +392,7 @@ export default function Home() {
       </Section>
 
       {/* ── SECTION 4: What Is AI Visibility? ── */}
-      <Section background="silver">
+      <Section background="white">
         <Container>
           <div className="max-w-3xl">
             <SectionLabel>Understanding the Basics</SectionLabel>
@@ -550,9 +545,10 @@ export default function Home() {
       <Section background="silver">
         <Container>
           <SectionLabel>Founder Authority</SectionLabel>
-          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy leading-tight mt-2 mb-5">
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy leading-tight mt-2 mb-2">
             Why Businesses Work With Beth Aden
           </h2>
+          <div className="w-10 h-[2px] bg-gold/60 mb-6" aria-hidden="true" />
           <p className="text-base text-graphite leading-relaxed max-w-2xl mb-10">
             Beth Aden helps business owners understand, adopt, and implement AI in practical ways
             that improve visibility, operations, and execution. Her work combines AI strategy,
@@ -564,7 +560,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-12">
 
             {/* Card 1 — AI Visibility Strategist (proprietary frameworks — gold indicator) */}
-            <div className="bg-white rounded-xl p-6 border border-silver/60 shadow-sm flex flex-col">
+            <div className="bg-white rounded-xl p-6 shadow-md flex flex-col">
               <div className="flex items-start justify-between mb-4">
                 <div className="w-7 h-[3px] bg-teal mt-1 flex-none" />
                 <span className="text-[9px] font-heading font-semibold uppercase tracking-[0.14em] text-gold border border-gold/30 rounded px-1.5 py-0.5 leading-none flex-none ml-3">
@@ -582,7 +578,7 @@ export default function Home() {
             </div>
 
             {/* Card 2 — AI Operations Strategist */}
-            <div className="bg-white rounded-xl p-6 border border-silver/60 shadow-sm flex flex-col">
+            <div className="bg-white rounded-xl p-6 shadow-md flex flex-col">
               <div className="w-7 h-[3px] bg-teal mb-4" />
               <h3 className="font-heading font-semibold text-base text-navy mb-2 leading-snug">
                 AI Operations Strategist
@@ -593,7 +589,7 @@ export default function Home() {
             </div>
 
             {/* Card 3 — Custom AI Systems Builder */}
-            <div className="bg-white rounded-xl p-6 border border-silver/60 shadow-sm flex flex-col">
+            <div className="bg-white rounded-xl p-6 shadow-md flex flex-col">
               <div className="w-7 h-[3px] bg-teal mb-4" />
               <h3 className="font-heading font-semibold text-base text-navy mb-2 leading-snug">
                 Custom AI Systems Builder
@@ -604,7 +600,7 @@ export default function Home() {
             </div>
 
             {/* Card 4 — AI Enablement Advisor */}
-            <div className="bg-white rounded-xl p-6 border border-silver/60 shadow-sm flex flex-col">
+            <div className="bg-white rounded-xl p-6 shadow-md flex flex-col">
               <div className="w-7 h-[3px] bg-teal mb-4" />
               <h3 className="font-heading font-semibold text-base text-navy mb-2 leading-snug">
                 AI Enablement Advisor
@@ -615,7 +611,7 @@ export default function Home() {
             </div>
 
             {/* Card 5 — Business Operator First */}
-            <div className="bg-white rounded-xl p-6 border border-silver/60 shadow-sm flex flex-col">
+            <div className="bg-white rounded-xl p-6 shadow-md flex flex-col">
               <div className="w-7 h-[3px] bg-teal mb-4" />
               <h3 className="font-heading font-semibold text-base text-navy mb-2 leading-snug">
                 Business Operator First
@@ -628,7 +624,7 @@ export default function Home() {
           </div>
 
           {/* ── Proof bar ── */}
-          <div className="border-t border-silver pt-8">
+          <div className="border-t border-graphite/10 pt-8">
           <div className="border-l-4 border-gold pl-6 py-3">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
               {(
@@ -643,7 +639,7 @@ export default function Home() {
                 <div key={item} className="flex items-center gap-3">
                   <span className="text-sm font-heading font-semibold text-navy">{item}</span>
                   {i < arr.length - 1 && (
-                    <span className="text-silver/60 select-none" aria-hidden="true">·</span>
+                    <span className="text-graphite/30 select-none" aria-hidden="true">·</span>
                   )}
                 </div>
               ))}
@@ -655,15 +651,15 @@ export default function Home() {
       </Section>
 
       {/* ── SECTION 8: Audit Introduction ── */}
-      <Section background="navy">
+      <Section background="teal">
         <Container>
           <div className="max-w-3xl">
-            <SectionLabel light>The Right Starting Point</SectionLabel>
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white leading-tight mt-2 mb-6">
+            <SectionLabel>The Right Starting Point</SectionLabel>
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy leading-tight mt-2 mb-6">
               Not Sure Where You Stand? That&rsquo;s Exactly What the Audit Is For.
             </h2>
 
-            <div className="space-y-5 text-base text-silver leading-relaxed">
+            <div className="space-y-5 text-base text-graphite leading-relaxed">
               <p>
                 Most business owners who come to Beth Aden AI start with the same situation: they
                 know AI search is changing things, they&rsquo;re not sure what it means for their
@@ -693,7 +689,6 @@ export default function Home() {
 
             <PullStatement
               quote="The audit isn&rsquo;t a starting point because it&rsquo;s the cheapest option. It&rsquo;s a starting point because everything else — strategy, implementation, content — works better when it&rsquo;s built on accurate information."
-              light
               className="mt-8"
             />
 
@@ -751,7 +746,7 @@ export default function Home() {
       </Section>
 
       {/* ── SECTION 9: AI Visibility Library Preview ── */}
-      <Section background="silver">
+      <Section background="white">
         <Container>
           <SectionLabel>From the AI Visibility Library</SectionLabel>
           <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy leading-tight mt-2 mb-4">

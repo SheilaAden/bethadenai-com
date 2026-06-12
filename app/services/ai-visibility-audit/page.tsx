@@ -307,34 +307,33 @@ export default function AIVisibilityAuditPage() {
       </div>
 
       {/* ── SECTION 2: The Problem ── */}
-      <Section background="graphite">
+      <Section background="white">
         <Container>
           <div className="max-w-3xl">
-            <SectionLabel light>The Shift Is Already Here</SectionLabel>
+            <SectionLabel>The Shift Is Already Here</SectionLabel>
             <div className="space-y-5 mt-6">
-              <p className="text-base md:text-lg text-silver leading-relaxed">
+              <p className="text-base md:text-lg text-graphite leading-relaxed">
                 Your customers are already using AI to find businesses like yours.
               </p>
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 ChatGPT, Perplexity, Google AI Overviews, Gemini, and dozens of other AI-powered tools are
                 now part of how people search for services, compare options, and decide who to call. Many
                 of those customers never type a query into Google. They ask AI. They describe what they
                 need. They get a list of recommendations. And they call whoever appears at the top.
               </p>
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 The question isn&#39;t whether AI is recommending businesses in your category. It is.
               </p>
               <PullStatement
-                light
                 quote="The question is whether it's recommending yours."
               />
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 Most business owners don&#39;t know the answer. They assume that if they have a website,
                 active social media, and decent Google reviews, they&#39;re covered. In most cases, they&#39;re
                 not. AI systems evaluate businesses differently from traditional search engines — and the
                 signals that made you visible on Google don&#39;t automatically make you visible to AI.
               </p>
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 That&#39;s not a technology problem. It&#39;s an information problem. And it&#39;s exactly what an
                 AI Visibility Audit is designed to solve.
               </p>
@@ -344,7 +343,7 @@ export default function AIVisibilityAuditPage() {
       </Section>
 
       {/* ── SECTION 3: What Is an AI Visibility Audit? ── */}
-      <Section background="silver">
+      <Section background="white">
         <Container>
           <div className="max-w-3xl">
             <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy mb-6">
@@ -430,7 +429,7 @@ export default function AIVisibilityAuditPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {auditAreas.map((area, i) => (
-              <div key={i} className="bg-cloud rounded-lg p-6 border border-silver">
+              <div key={i} className="bg-cloud rounded-lg p-6 border border-silver shadow-sm">
                 <h3 className="font-heading font-semibold text-base text-navy mb-3">
                   {area.title}
                 </h3>
@@ -455,7 +454,7 @@ export default function AIVisibilityAuditPage() {
             {deliverables.map((item, i) => (
               <div
                 key={i}
-                className={`rounded-lg p-6 border border-silver ${
+                className={`bg-cloud rounded-lg p-6 border border-silver shadow-sm ${
                   i === deliverables.length - 1 && deliverables.length % 2 !== 0
                     ? 'md:col-span-2 md:max-w-lg'
                     : ''
@@ -482,13 +481,13 @@ export default function AIVisibilityAuditPage() {
       </Section>
 
       {/* ── SECTION 7: How It Works ── */}
-      <Section background="graphite">
+      <Section background="white">
         <Container>
           <div className="max-w-3xl">
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white mb-3">
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy mb-3">
               How It Works
             </h2>
-            <p className="text-base text-silver leading-relaxed mb-12">
+            <p className="text-base text-graphite leading-relaxed mb-12">
               The process is straightforward. Your time investment is minimal. Here&#39;s what to expect
               from start to finish.
             </p>
@@ -504,15 +503,15 @@ export default function AIVisibilityAuditPage() {
                     </span>
                   </div>
                   <div className="pt-1">
-                    <h3 className="font-heading font-semibold text-lg text-white mb-2">
+                    <h3 className="font-heading font-semibold text-lg text-navy mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-base text-silver leading-relaxed">{step.body}</p>
+                    <p className="text-base text-graphite leading-relaxed">{step.body}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="text-sm text-silver/70 mt-10 border-t border-white/10 pt-6">
+            <p className="text-sm text-graphite/60 mt-10 border-t border-graphite/10 pt-6">
               The full process — from intake to walkthrough — typically takes one to two weeks.
             </p>
           </div>
@@ -574,7 +573,7 @@ export default function AIVisibilityAuditPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {outcomes.map((outcome, i) => (
-              <div key={i} className="bg-cloud rounded-lg p-6 border border-silver">
+              <div key={i} className="bg-cloud rounded-lg p-6 border border-silver shadow-sm">
                 <div
                   className="text-2xl font-heading font-semibold text-teal/30 mb-3"
                   aria-hidden="true"
@@ -611,7 +610,7 @@ export default function AIVisibilityAuditPage() {
               <p className="text-xs font-heading font-semibold uppercase tracking-[0.15em] text-teal mb-4">
                 AI Visibility Audit
               </p>
-              <p className="text-6xl md:text-7xl font-heading font-semibold text-white mb-3">
+              <p className="text-6xl md:text-7xl font-heading font-semibold text-gold mb-3">
                 $497
               </p>
               <p className="text-sm text-silver/70 mb-6">

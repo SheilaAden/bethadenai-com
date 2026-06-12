@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 
-type SectionBackground = 'white' | 'silver' | 'navy' | 'graphite'
+type SectionBackground = 'white' | 'silver' | 'navy' | 'graphite' | 'teal'
 
 interface SectionProps {
   children: React.ReactNode
@@ -16,6 +16,7 @@ const backgroundClasses: Record<SectionBackground, string> = {
   silver:   'bg-silver',
   navy:     'bg-navy',
   graphite: 'bg-graphite',
+  teal:     'bg-teal/[0.10]',
 }
 
 /**

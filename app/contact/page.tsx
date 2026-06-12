@@ -314,7 +314,7 @@ export default function ContactPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {notRightFor.map((item, i) => (
-              <div key={i} className="bg-cloud rounded-lg p-6 border border-silver">
+              <div key={i} className="bg-cloud rounded-lg p-6 border border-silver shadow-sm">
                 <h3 className="font-heading font-semibold text-base text-navy mb-3">
                   {item.heading}
                 </h3>
@@ -326,14 +326,14 @@ export default function ContactPage() {
       </Section>
 
       {/* ── SECTION 4: Contact Process ── */}
-      <Section background="graphite">
+      <Section background="silver">
         <Container>
           <div className="max-w-3xl">
-            <SectionLabel light>What Happens Next</SectionLabel>
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white mt-2 mb-4">
+            <SectionLabel>What Happens Next</SectionLabel>
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy mt-2 mb-4">
               How the Conversation Works
             </h2>
-            <p className="text-base text-silver leading-relaxed mb-12">
+            <p className="text-base text-graphite leading-relaxed mb-12">
               There&#39;s no complicated intake process here. You send a message. Beth reads it. If
               there&#39;s a potential fit, she responds with clarity about what that looks like.
             </p>
@@ -349,10 +349,10 @@ export default function ContactPage() {
                     </span>
                   </div>
                   <div className="pt-1">
-                    <h3 className="font-heading font-semibold text-lg text-white mb-2">
+                    <h3 className="font-heading font-semibold text-lg text-navy mb-2">
                       {step.heading}
                     </h3>
-                    <p className="text-base text-silver leading-relaxed">{step.body}</p>
+                    <p className="text-base text-graphite leading-relaxed">{step.body}</p>
                   </div>
                 </div>
               ))}

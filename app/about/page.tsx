@@ -175,7 +175,7 @@ export default function AboutPage() {
         body="If you've landed here, you're probably trying to figure out whether AI search is affecting your business, and whether this practice is the right fit to help you with it. I'll give you a straight answer to both questions on this page."
         primaryCTA={{ text: 'Get Your AI Visibility Audit', href: '/services/ai-visibility-audit' }}
         secondaryCTA={{ text: 'Book a Discovery Call', href: '/contact' }}
-        background="navy"
+        background="silver"
         size="medium"
         rightContent={
           <Image
@@ -183,7 +183,7 @@ export default function AboutPage() {
             alt="Beth Aden, AI Visibility Strategist and founder of Beth Aden AI"
             width={480}
             height={560}
-            className="rounded-2xl border border-white/[0.1] shadow-[0_8px_48px_rgba(0,0,0,0.45)] object-cover w-full max-w-[420px]"
+            className="rounded-2xl border border-graphite/10 shadow-[0_8px_32px_rgba(11,31,51,0.12)] object-cover w-full max-w-[420px]"
             priority
           />
         }
@@ -279,7 +279,7 @@ export default function AboutPage() {
             {beliefs.map((belief, i) => (
               <div
                 key={i}
-                className={`bg-cloud rounded-lg p-6 border border-silver ${
+                className={`bg-cloud rounded-lg p-6 border border-silver shadow-sm ${
                   i === beliefs.length - 1 && beliefs.length % 2 !== 0
                     ? 'md:col-span-2 md:max-w-xl'
                     : ''
@@ -394,9 +394,10 @@ export default function AboutPage() {
         <Container>
           <div className="max-w-3xl">
             <SectionLabel light>The Shift Worth Understanding</SectionLabel>
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white mt-2 mb-8">
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white mt-2 mb-2">
               Why I Built a Practice Around This Specific Problem
             </h2>
+            <div className="w-10 h-[2px] bg-gold/70 mb-7" aria-hidden="true" />
             <div className="space-y-6">
               <p className="text-base text-silver leading-relaxed">
                 I want to be direct about something, because I think it&#39;s worth saying plainly.

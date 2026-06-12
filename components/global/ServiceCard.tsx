@@ -14,13 +14,16 @@ export function ServiceCard({ title, description, href, badge, className }: Serv
   return (
     <article
       className={cn(
-        'flex flex-col bg-cloud border border-silver rounded-lg p-6 md:p-8',
-        'hover:border-teal/40 transition-colors',
+        'flex flex-col bg-cloud border border-silver rounded-lg p-6 md:p-8 shadow-sm',
+        'hover:border-teal/40 hover:shadow-md transition-all',
         className
       )}
     >
+      {/* Teal brand accent stripe */}
+      <div className="w-8 h-[3px] bg-teal rounded-full mb-4 flex-none" aria-hidden="true" />
+
       {badge && (
-        <span className="self-start mb-3 px-3 py-1 bg-teal/10 text-teal text-xs font-heading font-semibold uppercase tracking-wide rounded-full">
+        <span className="self-start mb-3 px-3 py-1 bg-gold/10 text-gold border border-gold/20 text-xs font-heading font-semibold uppercase tracking-wide rounded-full">
           {badge}
         </span>
       )}

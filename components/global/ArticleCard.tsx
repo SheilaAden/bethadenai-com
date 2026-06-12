@@ -31,8 +31,8 @@ export function ArticleCard({
   return (
     <article
       className={cn(
-        'flex flex-col bg-cloud border border-silver rounded-lg p-6 md:p-8',
-        'hover:border-teal/40 transition-colors',
+        'flex flex-col bg-cloud border border-silver rounded-lg p-6 md:p-8 shadow-sm',
+        'hover:border-teal/40 hover:shadow-md transition-all',
         className
       )}
     >

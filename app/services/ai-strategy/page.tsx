@@ -298,20 +298,20 @@ export default function AIStrategyPage() {
       </div>
 
       {/* ── SECTION 2: The Problem ── */}
-      <Section background="graphite">
+      <Section background="white">
         <Container>
           <div className="max-w-3xl">
-            <SectionLabel light>The Gap Between Knowing and Doing</SectionLabel>
-            <h2 className="font-heading font-semibold text-2xl md:text-3xl text-white mt-2 mb-6">
+            <SectionLabel>The Gap Between Knowing and Doing</SectionLabel>
+            <h2 className="font-heading font-semibold text-2xl md:text-3xl text-navy mt-2 mb-6">
               Most Businesses with Audit Findings Don&#39;t Know What to Do With Them
             </h2>
             <div className="space-y-5">
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 The AI Visibility Audit tells you where your business stands. It documents what AI systems
                 are finding, what they&#39;re missing, and what&#39;s preventing them from recommending you. That
                 information is valuable. But it isn&#39;t a plan.
               </p>
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 A gap analysis and a list of recommendations are a starting point, not a roadmap. And
                 without a roadmap, most businesses respond to their findings the same way: they start with
                 whatever looks most urgent, make a few changes, and hope the picture improves. Sometimes it
@@ -319,12 +319,12 @@ export default function AIStrategyPage() {
                 improved by sequenced, deliberate action that addresses foundational gaps before
                 surface-level ones.
               </p>
-              <p className="text-base text-silver leading-relaxed">
+              <p className="text-base text-graphite leading-relaxed">
                 This is the problem AI Strategy solves. It takes everything the audit revealed and turns it
                 into a specific plan: what to fix first, what to fix second, why the order matters, what
                 each action will take to execute, and what you can expect to see as progress accumulates.
               </p>
-              <p className="text-base text-white font-heading font-semibold leading-relaxed">
+              <p className="text-base text-navy font-heading font-semibold leading-relaxed">
                 Without a strategy, you have information. With a strategy, you have direction.
               </p>
             </div>
@@ -385,7 +385,7 @@ export default function AIStrategyPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Phase 1 — Audit */}
-            <div className="bg-cloud rounded-lg border border-silver p-6 flex flex-col">
+            <div className="bg-cloud rounded-lg border border-silver p-6 flex flex-col shadow-sm">
               <p className="text-xs font-heading font-semibold uppercase tracking-[0.12em] text-graphite/50 mb-2">
                 Phase One
               </p>
@@ -445,7 +445,7 @@ export default function AIStrategyPage() {
             </div>
 
             {/* Phase 3 — Implementation */}
-            <div className="bg-cloud rounded-lg border border-silver p-6 flex flex-col">
+            <div className="bg-cloud rounded-lg border border-silver p-6 flex flex-col shadow-sm">
               <p className="text-xs font-heading font-semibold uppercase tracking-[0.12em] text-graphite/50 mb-2">
                 Phase Three
               </p>
@@ -525,7 +525,7 @@ export default function AIStrategyPage() {
             {deliverables.map((item, i) => (
               <div
                 key={i}
-                className={`bg-cloud rounded-lg p-6 border border-silver ${
+                className={`bg-cloud rounded-lg p-6 border border-silver shadow-sm ${
                   i === deliverables.length - 1 && deliverables.length % 2 !== 0
                     ? 'md:col-span-2 md:max-w-xl'
                     : ''
@@ -550,13 +550,13 @@ export default function AIStrategyPage() {
       </Section>
 
       {/* ── SECTION 7: Process Overview ── */}
-      <Section background="graphite">
+      <Section background="silver">
         <Container>
           <div className="max-w-3xl">
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white mb-3">
+            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy mb-3">
               How the Engagement Works
             </h2>
-            <p className="text-base text-silver leading-relaxed mb-12">
+            <p className="text-base text-graphite leading-relaxed mb-12">
               The AI Strategy engagement is structured, direct, and designed to produce a usable document
               — not a lengthy consulting process. Here&#39;s what to expect from start to finish.
             </p>
@@ -572,10 +572,10 @@ export default function AIStrategyPage() {
                     </span>
                   </div>
                   <div className="pt-1">
-                    <h3 className="font-heading font-semibold text-lg text-white mb-2">
+                    <h3 className="font-heading font-semibold text-lg text-navy mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-base text-silver leading-relaxed">{step.body}</p>
+                    <p className="text-base text-graphite leading-relaxed">{step.body}</p>
                   </div>
                 </div>
               ))}
@@ -644,7 +644,7 @@ export default function AIStrategyPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {outcomes.map((outcome, i) => (
-              <div key={i} className="bg-cloud rounded-lg p-6 border border-silver">
+              <div key={i} className="bg-cloud rounded-lg p-6 border border-silver shadow-sm">
                 <div
                   className="text-2xl font-heading font-semibold text-teal/30 mb-3"
                   aria-hidden="true"
@@ -680,7 +680,7 @@ export default function AIStrategyPage() {
             Where AI Strategy Fits in the Full Path
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-            <div className="bg-cloud rounded-lg p-6 border border-silver">
+            <div className="bg-cloud rounded-lg p-6 border border-silver shadow-sm">
               <p className="text-xs font-heading font-semibold uppercase tracking-[0.12em] text-graphite/50 mb-2">
                 The Starting Point
               </p>
@@ -700,7 +700,7 @@ export default function AIStrategyPage() {
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
-            <div className="bg-cloud rounded-lg p-6 border border-silver">
+            <div className="bg-cloud rounded-lg p-6 border border-silver shadow-sm">
               <p className="text-xs font-heading font-semibold uppercase tracking-[0.12em] text-graphite/50 mb-2">
                 The Next Step
               </p>

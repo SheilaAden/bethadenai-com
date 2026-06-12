@@ -532,7 +532,7 @@ export default function ResourcesPage() {
                 className={`rounded-lg p-6 ${
                   path.highlight
                     ? 'bg-navy border border-teal/30'
-                    : 'bg-cloud border border-silver'
+                    : 'bg-cloud border border-silver shadow-sm'
                 }`}
               >
                 <p
