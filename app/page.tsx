@@ -546,6 +546,114 @@ export default function Home() {
         </Container>
       </Section>
 
+      {/* ── SECTION 7b: Founder Authority ── */}
+      <Section background="silver">
+        <Container>
+          <SectionLabel>Founder Authority</SectionLabel>
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy leading-tight mt-2 mb-5">
+            Why Businesses Work With Beth Aden
+          </h2>
+          <p className="text-base text-graphite leading-relaxed max-w-2xl mb-10">
+            Beth Aden helps business owners understand, adopt, and implement AI in practical ways
+            that improve visibility, operations, and execution. Her work combines AI strategy,
+            workflow systems, AI visibility, and real-world business experience to help organizations
+            move from confusion to confident action.
+          </p>
+
+          {/* ── 5-card authority grid ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-12">
+
+            {/* Card 1 — AI Visibility Strategist (proprietary frameworks — gold indicator) */}
+            <div className="bg-white rounded-xl p-6 border border-silver/60 shadow-sm flex flex-col">
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-7 h-[3px] bg-teal mt-1 flex-none" />
+                <span className="text-[9px] font-heading font-semibold uppercase tracking-[0.14em] text-gold border border-gold/30 rounded px-1.5 py-0.5 leading-none flex-none ml-3">
+                  Framework
+                </span>
+              </div>
+              <h3 className="font-heading font-semibold text-base text-navy mb-2 leading-snug">
+                AI Visibility Strategist
+              </h3>
+              <p className="text-sm text-graphite leading-relaxed">
+                Creator of the Beth Aden AI Visibility Framework
+                <span className="text-gold">™</span> and AI Visibility OS
+                <span className="text-gold">™</span>.
+              </p>
+            </div>
+
+            {/* Card 2 — AI Operations Strategist */}
+            <div className="bg-white rounded-xl p-6 border border-silver/60 shadow-sm flex flex-col">
+              <div className="w-7 h-[3px] bg-teal mb-4" />
+              <h3 className="font-heading font-semibold text-base text-navy mb-2 leading-snug">
+                AI Operations Strategist
+              </h3>
+              <p className="text-sm text-graphite leading-relaxed">
+                Helps businesses turn AI from a concept into practical daily execution.
+              </p>
+            </div>
+
+            {/* Card 3 — Custom AI Systems Builder */}
+            <div className="bg-white rounded-xl p-6 border border-silver/60 shadow-sm flex flex-col">
+              <div className="w-7 h-[3px] bg-teal mb-4" />
+              <h3 className="font-heading font-semibold text-base text-navy mb-2 leading-snug">
+                Custom AI Systems Builder
+              </h3>
+              <p className="text-sm text-graphite leading-relaxed">
+                Designs custom GPTs, AI assistants, workflow systems, and operational frameworks.
+              </p>
+            </div>
+
+            {/* Card 4 — AI Enablement Advisor */}
+            <div className="bg-white rounded-xl p-6 border border-silver/60 shadow-sm flex flex-col">
+              <div className="w-7 h-[3px] bg-teal mb-4" />
+              <h3 className="font-heading font-semibold text-base text-navy mb-2 leading-snug">
+                AI Enablement Advisor
+              </h3>
+              <p className="text-sm text-graphite leading-relaxed">
+                Translates complex AI concepts into plain-English processes teams can actually use.
+              </p>
+            </div>
+
+            {/* Card 5 — Business Operator First */}
+            <div className="bg-white rounded-xl p-6 border border-silver/60 shadow-sm flex flex-col">
+              <div className="w-7 h-[3px] bg-teal mb-4" />
+              <h3 className="font-heading font-semibold text-base text-navy mb-2 leading-snug">
+                Business Operator First
+              </h3>
+              <p className="text-sm text-graphite leading-relaxed">
+                Built from hands-on business experience, not theory, hype, or trend-chasing.
+              </p>
+            </div>
+
+          </div>
+
+          {/* ── Proof bar ── */}
+          <div className="border-t border-silver pt-8">
+          <div className="border-l-4 border-gold pl-6 py-3">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+              {(
+                [
+                  'AI Visibility OS™ Creator',
+                  'Custom GPT Builder',
+                  'AI Operations Strategist',
+                  'AI Enablement Advisor',
+                  'Speaker & Educator',
+                ] as string[]
+              ).map((item, i, arr) => (
+                <div key={item} className="flex items-center gap-3">
+                  <span className="text-sm font-heading font-semibold text-navy">{item}</span>
+                  {i < arr.length - 1 && (
+                    <span className="text-silver/60 select-none" aria-hidden="true">·</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          </div>
+
+        </Container>
+      </Section>
+
       {/* ── SECTION 8: Audit Introduction ── */}
       <Section background="navy">
         <Container>
