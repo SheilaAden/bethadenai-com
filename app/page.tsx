@@ -944,12 +944,26 @@ export default function Home() {
             ))}
           </div>
 
-          <Link
-            href="/resources"
-            className="inline-flex items-center gap-1.5 text-teal font-heading font-semibold text-sm hover:text-navy transition-colors"
-          >
-            Visit the AI Visibility Library <span aria-hidden="true">→</span>
-          </Link>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+            <Link
+              href="/resources"
+              className="inline-flex items-center gap-1.5 text-teal font-heading font-semibold text-sm hover:text-navy transition-colors"
+            >
+              Visit the AI Visibility Library <span aria-hidden="true">→</span>
+            </Link>
+            <span className="hidden sm:block w-px h-4 bg-silver flex-shrink-0" aria-hidden="true" />
+            <Link
+              href="/resources/ai-visibility-readiness-checklist"
+              className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-navy/70 hover:text-teal transition-colors group"
+            >
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-teal/10 border border-teal/30 flex-shrink-0 group-hover:bg-teal/20 transition-colors" aria-hidden="true">
+                <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
+                  <path d="M1 3.5L3.2 5.5L8 1" stroke="#00B8AE" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+              Free Checklist: AI Visibility Readiness
+            </Link>
+          </div>
         </Container>
       </Section>
 

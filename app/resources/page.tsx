@@ -364,6 +364,74 @@ export default function ResourcesPage() {
         </Container>
       </Section>
 
+      {/* ── SECTION 2b: Free Checklist CTA ── */}
+      <section className="bg-navy py-14 md:py-20">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* Left: copy */}
+            <div>
+              <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-teal mb-3">
+                Free Resource
+              </p>
+              <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white leading-tight mb-4">
+                AI Visibility Readiness Checklist™
+              </h2>
+              <p className="text-base text-silver/80 leading-relaxed mb-6">
+                Find out how visible your business is to ChatGPT, Google AI, Perplexity, and other
+                AI-powered search systems.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  '25 AI Visibility readiness checks',
+                  'Scoring guide',
+                  '10 common visibility mistakes',
+                  'Next-step recommendations',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-teal/20 border border-teal/40 flex items-center justify-center mt-0.5">
+                      <svg width="10" height="8" viewBox="0 0 10 8" fill="none" aria-hidden="true">
+                        <path d="M1 4L3.5 6.5L9 1" stroke="#00B8AE" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                    <span className="text-sm text-silver leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/resources/ai-visibility-readiness-checklist"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-teal text-white font-heading font-semibold text-sm rounded-md hover:bg-[#009991] transition-colors"
+              >
+                Download the Free Checklist <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+            {/* Right: visual callout card */}
+            <div className="hidden lg:block">
+              <div className="rounded-2xl border border-white/[0.1] bg-white/[0.04] p-8 shadow-[0_8px_48px_rgba(0,0,0,0.4)]">
+                <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-gold mb-4">
+                  AI Visibility Readiness Checklist™
+                </p>
+                <div className="space-y-3">
+                  {[
+                    { number: '01', label: 'Entity & Identity' },
+                    { number: '02', label: 'Website Clarity' },
+                    { number: '03', label: 'Structured Data' },
+                    { number: '04', label: 'Cross-Platform Consistency' },
+                    { number: '05', label: 'Authority Signals' },
+                  ].map((row) => (
+                    <div key={row.number} className="flex items-center gap-4 py-2.5 border-b border-white/[0.06] last:border-0">
+                      <span className="text-[10px] font-heading font-semibold text-teal/50 w-5 flex-shrink-0">{row.number}</span>
+                      <span className="text-sm text-silver/70">{row.label}</span>
+                      <span className="ml-auto flex-shrink-0 w-4 h-4 rounded-sm border border-teal/30 bg-teal/10" aria-hidden="true" />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-[11px] text-silver/30 mt-6">25 checks · Free download · No account required</p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* ── SECTION 3: Featured Articles ── */}
       <Section background="silver">
         <Container>
