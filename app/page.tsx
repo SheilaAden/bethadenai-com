@@ -47,7 +47,7 @@ const homeSchema = {
       url: 'https://bethadenai.com',
       description:
         'Beth Aden AI helps small businesses become visible, understandable, and recommendable across AI search, answer engines, and automated decision systems.',
-      email: 'saden.aiartist@gmail.com',
+      email: 'beth@bethadenai.com',
       areaServed: {
         '@type': 'Country',
         name: 'United States',
@@ -55,7 +55,7 @@ const homeSchema = {
       founder: { '@id': 'https://bethadenai.com/#person' },
       contactPoint: {
         '@type': 'ContactPoint',
-        email: 'saden.aiartist@gmail.com',
+        email: 'beth@bethadenai.com',
         contactType: 'customer service',
         areaServed: 'US',
         availableLanguage: 'English',
@@ -1001,7 +1001,7 @@ export default function Home() {
         body="AI search is already recommending businesses in your category to customers who are ready to buy. An AI Visibility Audit tells you whether your business is one of them — and if it&rsquo;s not, exactly what to change. No technical knowledge required. No long-term commitment. Just a clear, honest assessment of where your business stands in AI search and a prioritized plan for what to do next."
         primaryCTA={{ text: 'Get Your AI Visibility Audit', href: '/contact' }}
         secondaryCTA={{ text: 'See all services', href: '/services' }}
-        microCopy="saden.aiartist@gmail.com · Serving clients throughout the United States, virtually and remotely. Beth reviews every inquiry personally and responds within 1–2 business days."
+        microCopy="beth@bethadenai.com · Serving clients throughout the United States, virtually and remotely. Beth reviews every inquiry personally and responds within 1–2 business days."
         background="navy"
       />
     </>

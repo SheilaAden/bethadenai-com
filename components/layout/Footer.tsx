@@ -44,10 +44,10 @@ export function Footer() {
             <address className="not-italic mt-4 space-y-1.5">
               <p className="text-sm">
                 <a
-                  href="mailto:saden.aiartist@gmail.com"
+                  href="mailto:beth@bethadenai.com"
                   className="text-teal hover:text-white transition-colors"
                 >
-                  saden.aiartist@gmail.com
+                  beth@bethadenai.com
                 </a>
               </p>
               <p className="text-sm text-silver/60">
