@@ -165,32 +165,6 @@ const featuredArticles = [
 
 const categories = [
   {
-    name: 'AI Visibility — Foundations',
-    description: 'The foundational articles. Start here if you\'re building your understanding of what AI visibility means and why it matters.',
-    articles: [
-      {
-        slug: 'what-is-ai-visibility',
-        title: 'What Is AI Visibility? A Plain-Language Guide for Business Owners',
-        description:
-          'AI visibility is how clearly AI-powered systems can find, understand, and recommend your business. This article defines the concept, explains how it relates to SEO, and describes what low AI visibility costs a business in practical terms.',
-        category: 'AI Visibility — Foundations',
-      },
-    ],
-  },
-  {
-    name: 'GEO',
-    description: 'Articles on Generative Engine Optimization — the discipline of improving how your business appears in AI-generated responses from tools like ChatGPT, Perplexity, and Google AI Overviews.',
-    articles: [
-      {
-        slug: 'what-is-geo',
-        title: 'What Is Generative Engine Optimization (GEO)?',
-        description:
-          'GEO is the practice of building a digital presence that generative AI systems are willing and able to recommend. This article explains what GEO is, how generative AI systems evaluate sources, and what small businesses should focus on first.',
-        category: 'GEO',
-      },
-    ],
-  },
-  {
     name: 'AEO',
     description: 'Articles on Answer Engine Optimization — the practice of making your business the answer when AI-powered tools respond to direct questions.',
     articles: [
@@ -207,13 +181,6 @@ const categories = [
     name: 'AI Search Explained',
     description: 'Articles that explain how AI search systems work — written for business owners who want to understand the mechanics, not just the vocabulary.',
     articles: [
-      {
-        slug: 'why-isnt-my-business-showing-up-in-ai-search',
-        title: "Why Isn't My Business Showing Up in AI Search?",
-        description:
-          'The six most common reasons businesses are invisible in AI-powered search results — and what each reason means for how you approach fixing it. Written for business owners who have already noticed the gap between their Google presence and their AI search presence.',
-        category: 'AI Search',
-      },
       {
         slug: 'how-does-chatgpt-decide-which-businesses-to-recommend',
         title: 'How Does ChatGPT Decide Which Businesses to Recommend?',
@@ -430,11 +397,11 @@ export default function ResourcesPage() {
         <Container>
           <SectionLabel>Browse by Topic</SectionLabel>
           <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy mt-2 mb-4">
-            All Articles
+            More Articles
           </h2>
           <p className="text-base text-graphite leading-relaxed max-w-2xl mb-12">
-            The library is organized by topic. Use the categories below to find articles relevant
-            to your current questions.
+            Additional articles organized by topic. Use the categories below to find resources
+            relevant to your current questions.
           </p>
 
           {/*
