@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { createClient } from '@supabase/supabase-js'
 import { leadMagnets } from '@/lib/lead-magnets'
+import { getImmediateEmail } from '@/lib/email-sequences'
 
 // ── Environment validation ─────────────────────────────────────────────────
 
@@ -161,8 +162,26 @@ export async function POST(req: NextRequest) {
     })
 
     if (sendError) {
-      console.error('[lead-magnet] Resend error:', sendError)
-      // Don't block the download — email notification is secondary
+      console.error('[lead-magnet] Resend notification error:', sendError)
+      // Don't block the download — notification email is secondary
+    }
+
+    // ── Send visitor thank-you email (Day 0 of email sequence) ─────────────
+    const visitorEmail = getImmediateEmail(slug, firstName)
+
+    if (visitorEmail) {
+      const { error: visitorEmailError } = await resend.emails.send({
+        from: 'Beth Aden AI <onboarding@resend.dev>',
+        to: [email],
+        subject: visitorEmail.subject,
+        text: visitorEmail.text,
+        html: visitorEmail.html,
+      })
+
+      if (visitorEmailError) {
+        // Log but never block the download — visitor already has the file
+        console.error('[lead-magnet] Visitor email error:', visitorEmailError)
+      }
     }
 
     // ── Return download URL ─────────────────────────────────────────────────
