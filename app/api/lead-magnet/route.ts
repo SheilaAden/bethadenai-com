@@ -154,7 +154,7 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(env.resendApiKey)
 
     const { error: sendError } = await resend.emails.send({
-      from: 'Beth Aden AI Website <onboarding@resend.dev>',
+      from: 'Beth Aden AI <notifications@bethadenai.com>',
       to: [env.toEmail],
       subject,
       text: textBody,
@@ -171,7 +171,7 @@ export async function POST(req: NextRequest) {
 
     if (visitorEmail) {
       const { error: visitorEmailError } = await resend.emails.send({
-        from: 'Beth Aden AI <onboarding@resend.dev>',
+        from: 'Beth Aden AI <hello@bethadenai.com>',
         to: [email],
         subject: visitorEmail.subject,
         text: visitorEmail.text,
