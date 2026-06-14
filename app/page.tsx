@@ -315,6 +315,18 @@ export default function Home() {
                   See How It Works
                 </Link>
               </div>
+              <div className="mt-4">
+                <Link
+                  href="/resources/ai-visibility-readiness-checklist"
+                  className="inline-flex items-center gap-1.5 text-sm font-heading font-semibold text-navy/60 hover:text-teal transition-colors"
+                >
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="flex-shrink-0">
+                    <rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.2"/>
+                    <path d="M4 7l2 2 4-4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Get the Free Checklist
+                </Link>
+              </div>
             </div>
 
             {/* ── Right: AI Visibility Audit Snapshot mock card (desktop only) ── */}
@@ -371,6 +383,88 @@ export default function Home() {
                   Most businesses don&apos;t know this gap exists.
                 </p>
 
+              </div>
+            </div>
+
+          </div>
+        </Container>
+      </section>
+
+      {/* ── SECTION 1b: Free Checklist Promo ── */}
+      <section className="bg-navy py-14 md:py-20">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+            {/* Left: copy + CTA */}
+            <div>
+              <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-teal mb-3">
+                Free Resource
+              </p>
+              <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white leading-tight mb-4">
+                Find Out If Your Business Is Ready for AI Search
+              </h2>
+              <p className="text-base text-silver/80 leading-relaxed mb-6">
+                Download the AI Visibility Readiness Checklist™ and discover the gaps that may be
+                preventing your business from being found, understood, and recommended by AI systems
+                like ChatGPT, Google AI Overviews, Gemini, and Perplexity.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  '5-minute self-assessment',
+                  'No technical experience required',
+                  'Instant download',
+                  'Identify your biggest AI visibility gaps',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-teal/20 border border-teal/40 flex items-center justify-center">
+                      <svg width="10" height="8" viewBox="0 0 10 8" fill="none" aria-hidden="true">
+                        <path d="M1 4L3.5 6.5L9 1" stroke="#00B8AE" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                    <span className="text-sm text-silver leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/resources/ai-visibility-readiness-checklist"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-teal text-white font-heading font-semibold text-sm rounded-md hover:bg-[#009991] transition-colors"
+              >
+                Get the Free Checklist <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+
+            {/* Right: checklist preview card (desktop only) */}
+            <div className="hidden lg:block">
+              <div className="rounded-2xl border border-white/[0.1] bg-white/[0.04] p-8 shadow-[0_8px_48px_rgba(0,0,0,0.4)]">
+                <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-teal mb-5">
+                  AI Visibility Readiness Checklist™
+                </p>
+                <div className="space-y-1">
+                  {[
+                    { section: '01', label: 'Entity & Business Identity', checked: false },
+                    { section: '02', label: 'Website Clarity Signals', checked: false },
+                    { section: '03', label: 'Structured Data', checked: false },
+                    { section: '04', label: 'Cross-Platform Consistency', checked: false },
+                    { section: '05', label: 'Authority & Trust Signals', checked: false },
+                  ].map((row) => (
+                    <div
+                      key={row.section}
+                      className="flex items-center gap-4 py-3 border-b border-white/[0.06] last:border-0"
+                    >
+                      <span className="text-[10px] font-heading font-semibold text-teal/50 w-5 flex-shrink-0">
+                        {row.section}
+                      </span>
+                      <span className="text-sm text-silver/70 flex-1">{row.label}</span>
+                      <span
+                        className="flex-shrink-0 w-4 h-4 rounded-sm border border-teal/30 bg-teal/5"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-[11px] text-silver/30 mt-6 leading-relaxed">
+                  25 readiness checks · Scoring guide · Free download
+                </p>
               </div>
             </div>
 
