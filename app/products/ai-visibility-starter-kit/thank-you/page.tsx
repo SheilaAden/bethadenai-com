@@ -13,9 +13,13 @@
  *
  * Idempotent: refreshing the page re-calls /api/verify-purchase, which uses
  * upsert with ignoreDuplicates, so no duplicate emails or DB rows.
+ *
+ * NOTE: useSearchParams() requires a <Suspense> boundary in Next.js App Router.
+ * The default export wraps ThankYouContent in Suspense to satisfy this requirement
+ * and prevent static prerender failures at build time.
  */
 
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -28,9 +32,9 @@ type State =
   | { status: 'success'; downloadToken: string; sessionId: string; customerName: string }
   | { status: 'error'; message: string }
 
-// ── Component ─────────────────────────────────────────────────────────────────
+// ── Inner component (uses useSearchParams — must be inside Suspense) ──────────
 
-export default function ThankYouPage() {
+function ThankYouContent() {
   const searchParams = useSearchParams()
   const [state, setState] = useState<State>({ status: 'loading' })
 
@@ -364,5 +368,48 @@ export default function ThankYouPage() {
         </Container>
       </section>
     </>
+  )
+}
+
+// ── Page export (wraps inner component in Suspense) ───────────────────────────
+//
+// Required by Next.js App Router: any Client Component that calls
+// useSearchParams() must be rendered inside a <Suspense> boundary,
+// otherwise Next.js will throw during static prerendering at build time.
+
+export default function ThankYouPage() {
+  return (
+    <Suspense
+      fallback={
+        <section className="bg-navy min-h-screen flex items-center py-20">
+          <Container>
+            <div className="max-w-lg mx-auto text-center">
+              <div className="w-12 h-12 mx-auto mb-6">
+                <svg
+                  className="animate-spin text-teal"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="12" cy="12" r="10"
+                    stroke="#00B8AE" strokeWidth="2"
+                    strokeDasharray="32" strokeDashoffset="12"
+                  />
+                </svg>
+              </div>
+              <h1 className="font-heading font-semibold text-2xl text-white mb-3">
+                Verifying your purchase…
+              </h1>
+              <p className="text-sm text-silver/60">
+                This takes just a moment. Please don&rsquo;t close this tab.
+              </p>
+            </div>
+          </Container>
+        </section>
+      }
+    >
+      <ThankYouContent />
+    </Suspense>
   )
 }
