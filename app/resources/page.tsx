@@ -483,13 +483,13 @@ export default function ResourcesPage() {
                 </div>
 
                 {/* Right: product cover image (desktop) */}
-                <div className="hidden md:flex items-center justify-center bg-silver/30 w-64 shrink-0">
+                <div className="hidden md:flex items-center justify-center bg-silver/30 w-96 shrink-0 p-8">
                   <Image
                     src="/images/ai-visibility-starter-kit-cover.png"
                     alt="AI Visibility Starter Kit™ cover"
-                    width={220}
-                    height={284}
-                    className="object-contain w-full h-full"
+                    width={360}
+                    height={460}
+                    className="object-contain w-full rounded-xl shadow-lg"
                   />
                 </div>
 
