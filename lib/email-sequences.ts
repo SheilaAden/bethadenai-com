@@ -235,7 +235,6 @@ export const sequences: Record<string, EmailSequence> = {
     //   text: (firstName: string) => `...`,
     // },
   ],
-}
 
   // ── AI Visibility Starter Kit™ — Purchase confirmation ───────────────────
   'ai-visibility-starter-kit': [
