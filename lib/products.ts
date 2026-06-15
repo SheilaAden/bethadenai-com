@@ -46,7 +46,7 @@ export const products: Record<string, Product> = {
     priceInCents: 2700,
     privatePdfPath: 'private/AI_Visibility_Starter_Kit_v2_Beth_Aden_AI.pdf',
     pdfFilename: 'AI_Visibility_Starter_Kit_Beth_Aden_AI.pdf',
-    imagePath: '/images/ai-visibility-starter-kit.png',
+    imagePath: '/images/ai-visibility-starter-kit-cover.png',
     thankYouPath: '/products/ai-visibility-starter-kit/thank-you',
     // Reads from env — set NEXT_PUBLIC_STRIPE_STARTER_KIT_LINK in .env.local and Vercel
     stripePaymentLink: process.env.NEXT_PUBLIC_STRIPE_STARTER_KIT_LINK ?? '#',

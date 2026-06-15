@@ -265,7 +265,7 @@ function ThankYouContent() {
                 <div className="absolute inset-0 bg-teal/5 rounded-2xl blur-2xl scale-110" aria-hidden="true" />
                 <div className="relative rounded-2xl border border-silver overflow-hidden shadow-lg">
                   <Image
-                    src="/images/ai-visibility-starter-kit.png"
+                    src="/images/ai-visibility-starter-kit-cover.png"
                     alt="AI Visibility Starter Kit™"
                     width={360}
                     height={460}
