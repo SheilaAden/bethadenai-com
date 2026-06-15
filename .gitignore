@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private/ folder contains paid product PDFs served via API.
+# DO commit these files so they deploy with the project.
+# They are protected by token verification in /api/download/starter-kit.

@@ -237,7 +237,161 @@ export const sequences: Record<string, EmailSequence> = {
   ],
 }
 
+  // ── AI Visibility Starter Kit™ — Purchase confirmation ───────────────────
+  'ai-visibility-starter-kit': [
+    {
+      delayDays: 0,
+      subject: 'Your AI Visibility Starter Kit™ Is Ready',
+
+      html: (firstName: string, sessionId?: string, downloadToken?: string) => {
+        const downloadUrl = sessionId && downloadToken
+          ? `https://www.bethadenai.com/api/download/starter-kit?token=${downloadToken}&sid=${sessionId}`
+          : 'https://www.bethadenai.com/products/ai-visibility-starter-kit/thank-you'
+
+        return emailShell(`
+          <p style="margin:0 0 20px;font-size:16px;color:#2E3A46;line-height:1.7;">
+            Hi ${firstName},
+          </p>
+          <p style="margin:0 0 16px;font-size:15px;color:#2E3A46;line-height:1.7;">
+            Your AI Visibility Starter Kit™ is ready.
+          </p>
+          <p style="margin:0 0 24px;font-size:15px;color:#2E3A46;line-height:1.7;">
+            Thank you for your purchase. The kit is 38 pages of practical, non-technical
+            guidance designed to help you understand exactly where your business stands
+            in AI search — and what to do about it.
+          </p>
+
+          <!-- Download button -->
+          <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 28px;">
+            <tr>
+              <td style="background:#00B8AE;border-radius:6px;padding:0;">
+                <a href="${downloadUrl}"
+                   style="display:inline-block;padding:14px 28px;font-size:15px;
+                          font-weight:bold;color:#ffffff;text-decoration:none;
+                          letter-spacing:0.01em;">
+                  Download Your Starter Kit →
+                </a>
+              </td>
+            </tr>
+          </table>
+
+          <p style="margin:0 0 6px;font-size:14px;font-weight:bold;color:#0B1F33;">
+            How to use it:
+          </p>
+          <p style="margin:0 0 8px;font-size:14px;color:#2E3A46;line-height:1.7;">
+            Start with the <strong>AI Visibility Reality Check™</strong> on page 4.
+            Open ChatGPT, Gemini, and Perplexity. Search your business name.
+            What you find (or don't find) will tell you more than any audit.
+          </p>
+          <p style="margin:0 0 8px;font-size:14px;color:#2E3A46;line-height:1.7;">
+            Then work through the <strong>AI Visibility Scorecard™</strong> to get your
+            baseline score across all six visibility categories.
+          </p>
+          <p style="margin:0 0 28px;font-size:14px;color:#2E3A46;line-height:1.7;">
+            The <strong>30-Day Action Plan™</strong> tells you exactly what to do first.
+          </p>
+
+          <!-- Upsell block -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+            style="background:#F8FAFC;border:1px solid #E8EDF2;
+                   border-radius:6px;margin:0 0 24px;">
+            <tr>
+              <td style="padding:20px 24px;">
+                <p style="margin:0 0 6px;font-size:12px;font-weight:bold;
+                           color:#00B8AE;letter-spacing:0.1em;text-transform:uppercase;">
+                  Want a professional assessment?
+                </p>
+                <p style="margin:0 0 12px;font-size:14px;color:#2E3A46;line-height:1.6;">
+                  The AI Visibility OS™ Audit goes deeper — a full professional assessment
+                  of what AI systems can actually find, understand, trust, and recommend
+                  about your business, with a prioritized action report.
+                </p>
+                <a href="https://www.bethadenai.com/services/ai-visibility-audit"
+                   style="font-size:14px;font-weight:bold;color:#00B8AE;text-decoration:none;">
+                  Learn about the AI Visibility Audit →
+                </a>
+              </td>
+            </tr>
+          </table>
+
+          <p style="margin:0 0 28px;font-size:15px;color:#2E3A46;line-height:1.7;">
+            If you have questions about anything in the kit, just reply to this email.
+          </p>
+
+          <p style="margin:0;font-size:15px;color:#2E3A46;line-height:1.8;">
+            Talk soon,<br/>
+            <strong style="color:#0B1F33;">Beth Aden</strong><br/>
+            <span style="font-size:13px;color:#9AA5AF;">
+              AI Visibility Strategist · Beth Aden AI
+            </span>
+          </p>
+        `)
+      },
+
+      text: (firstName: string, sessionId?: string, downloadToken?: string) => {
+        const downloadUrl = sessionId && downloadToken
+          ? `https://www.bethadenai.com/api/download/starter-kit?token=${downloadToken}&sid=${sessionId}`
+          : 'https://www.bethadenai.com/products/ai-visibility-starter-kit/thank-you'
+
+        return [
+          `Hi ${firstName},`,
+          ``,
+          `Your AI Visibility Starter Kit™ is ready.`,
+          ``,
+          `Thank you for your purchase. Download your kit here:`,
+          downloadUrl,
+          ``,
+          `How to use it:`,
+          `Start with the AI Visibility Reality Check™ on page 4. Open ChatGPT, Gemini,`,
+          `and Perplexity. Search your business name. What you find will tell you more`,
+          `than any audit.`,
+          ``,
+          `Then work through the AI Visibility Scorecard™ to get your baseline score.`,
+          `The 30-Day Action Plan™ tells you exactly what to do first.`,
+          ``,
+          `If you have questions, just reply to this email.`,
+          ``,
+          `---`,
+          `Want a professional assessment?`,
+          `The AI Visibility OS™ Audit is a full assessment of what AI can actually`,
+          `find, understand, and recommend about your business.`,
+          `https://www.bethadenai.com/services/ai-visibility-audit`,
+          ``,
+          `Talk soon,`,
+          `Beth Aden`,
+          `AI Visibility Strategist · Beth Aden AI`,
+          `https://www.bethadenai.com`,
+        ].join('\n')
+      },
+    },
+  ],
+}
+
 // ── Lookup helpers ───────────────────────────────────────────────────────────
+
+/**
+ * Returns the purchase confirmation email for a paid product.
+ * Includes download link with signed token.
+ */
+export function getPurchaseEmail(
+  slug: string,
+  firstName: string,
+  sessionId: string,
+  downloadToken: string
+): { subject: string; html: string; text: string } | null {
+  const sequence = sequences[slug]
+  if (!sequence) return null
+  const step = sequence.find((s) => s.delayDays === 0)
+  if (!step) return null
+
+  // The purchase email html/text functions accept optional sessionId + downloadToken
+  type ExtendedFn = (firstName: string, sessionId?: string, downloadToken?: string) => string
+  return {
+    subject: step.subject,
+    html: (step.html as ExtendedFn)(firstName, sessionId, downloadToken),
+    text: (step.text as ExtendedFn)(firstName, sessionId, downloadToken),
+  }
+}
 
 /**
  * Returns the Day 0 email for a given slug, with firstName interpolated.
