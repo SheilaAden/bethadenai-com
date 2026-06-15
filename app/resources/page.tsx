@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Section } from '@/components/global/Section'
 import { Container } from '@/components/global/Container'
 import { SectionLabel } from '@/components/global/SectionLabel'
@@ -481,17 +482,15 @@ export default function ResourcesPage() {
                   </Link>
                 </div>
 
-                {/* Right: decorative panel (desktop) */}
-                <div className="hidden md:flex items-center justify-center bg-navy w-56 p-8">
-                  <div className="text-center">
-                    <p className="font-heading font-semibold text-4xl text-teal mb-1">$27</p>
-                    <p className="text-xs text-silver/50 mb-4">one-time</p>
-                    <div className="space-y-1.5">
-                      {['38 pages', '11 tools', '30-day plan'].map((stat) => (
-                        <p key={stat} className="text-[11px] text-silver/60">{stat}</p>
-                      ))}
-                    </div>
-                  </div>
+                {/* Right: product cover image (desktop) */}
+                <div className="hidden md:flex items-center justify-center bg-silver/30 w-56 p-6">
+                  <Image
+                    src="/images/ai-visibility-starter-kit-cover.png"
+                    alt="AI Visibility Starter Kit™ cover"
+                    width={160}
+                    height={207}
+                    className="object-contain drop-shadow-md"
+                  />
                 </div>
 
               </div>
