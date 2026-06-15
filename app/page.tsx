@@ -431,6 +431,23 @@ export default function Home() {
               >
                 Get the Free Checklist <span aria-hidden="true">→</span>
               </Link>
+
+              {/* Paid next-step option */}
+              <div className="mt-5 pt-5 border-t border-white/10">
+                <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-gold mb-2">
+                  Ready to Go Deeper?
+                </p>
+                <Link
+                  href="/products/ai-visibility-starter-kit"
+                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-silver/80 hover:text-white transition-colors group"
+                >
+                  <span>AI Visibility Starter Kit™ — $27</span>
+                  <span aria-hidden="true" className="text-teal group-hover:translate-x-0.5 transition-transform">→</span>
+                </Link>
+                <p className="text-xs text-silver/40 mt-1">
+                  38-page self-assessment, scorecard, and 30-day action plan
+                </p>
+              </div>
             </div>
 
             {/* Right: checklist preview card (desktop only) */}

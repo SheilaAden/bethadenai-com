@@ -432,6 +432,74 @@ export default function ResourcesPage() {
         </Container>
       </section>
 
+      {/* ── SECTION 2c: Starter Kit Paid Product Card ── */}
+      <section className="bg-cloud py-10 md:py-14 border-t border-silver">
+        <Container>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-gold mb-6">
+              Paid Resource
+            </p>
+            <div className="rounded-2xl border border-silver bg-white shadow-sm overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-0">
+
+                {/* Left: copy */}
+                <div className="p-8 md:p-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-navy text-teal text-[10px] font-heading font-semibold uppercase tracking-[0.12em]">
+                      $27 · Instant Download
+                    </span>
+                  </div>
+                  <h2 className="font-heading font-semibold text-2xl text-navy mb-3 leading-snug">
+                    AI Visibility Starter Kit™
+                  </h2>
+                  <p className="text-sm text-graphite leading-relaxed mb-5 max-w-xl">
+                    A 38-page self-assessment and action guide. Includes a scorecard, 11
+                    worksheets, a 30-day prioritized action plan, and a glossary — everything you
+                    need to understand your AI visibility gaps and start closing them. No technical
+                    background required.
+                  </p>
+                  <div className="flex flex-wrap gap-x-6 gap-y-2 mb-6">
+                    {[
+                      'AI Visibility Scorecard™',
+                      '10 Quick Wins™',
+                      '30-Day Action Plan™',
+                      'Authority Signal Checklist™',
+                    ].map((item) => (
+                      <div key={item} className="flex items-center gap-2">
+                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden="true">
+                          <path d="M1 5L4 8L11 1" stroke="#00B8AE" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        <span className="text-xs text-graphite/70">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href="/products/ai-visibility-starter-kit"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-teal text-white font-heading font-semibold text-sm rounded-md hover:bg-[#009991] transition-colors"
+                  >
+                    Get the Starter Kit <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+
+                {/* Right: decorative panel (desktop) */}
+                <div className="hidden md:flex items-center justify-center bg-navy w-56 p-8">
+                  <div className="text-center">
+                    <p className="font-heading font-semibold text-4xl text-teal mb-1">$27</p>
+                    <p className="text-xs text-silver/50 mb-4">one-time</p>
+                    <div className="space-y-1.5">
+                      {['38 pages', '11 tools', '30-day plan'].map((stat) => (
+                        <p key={stat} className="text-[11px] text-silver/60">{stat}</p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* ── SECTION 3: Featured Articles ── */}
       <Section background="silver">
         <Container>
