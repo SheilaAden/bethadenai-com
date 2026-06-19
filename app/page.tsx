@@ -297,10 +297,33 @@ export default function Home() {
               <p className="text-xl md:text-2xl font-heading font-medium text-graphite leading-snug mb-5">
                 When customers ask AI who to call, will your business come up?
               </p>
-              <p className="text-base md:text-lg text-graphite/70 leading-relaxed mb-8">
+              <p className="text-base md:text-lg text-graphite/70 leading-relaxed mb-6">
                 Beth Aden AI helps businesses become visible, understandable, and recommendable
                 across AI search, answer engines, and automated decision systems.
               </p>
+
+              {/* ── Founder credibility strip ── */}
+              <div className="flex items-center gap-3 mb-8 py-4 px-4 rounded-xl bg-white/60 border border-navy/[0.08] shadow-sm">
+                <Image
+                  src="/images/beth-aden-ai-headshot.png"
+                  alt="Beth Aden, AI Visibility Strategist"
+                  width={52}
+                  height={52}
+                  className="rounded-full object-cover object-top flex-shrink-0 ring-2 ring-teal/20"
+                />
+                <div className="min-w-0">
+                  <p className="font-heading font-semibold text-sm text-navy leading-none mb-0.5">
+                    Beth Aden
+                  </p>
+                  <p className="text-[11px] text-teal font-heading font-semibold tracking-[0.04em] mb-1">
+                    AI Visibility Strategist · AI Systems Architect
+                  </p>
+                  <p className="text-[11px] text-graphite/55 leading-snug">
+                    Helping businesses become visible, understandable, and recommendable in the age of AI.
+                  </p>
+                </div>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/services/ai-visibility-audit"
