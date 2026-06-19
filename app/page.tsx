@@ -291,9 +291,18 @@ export default function Home() {
 
             {/* ── Left: Headline, subheadline, copy, CTAs ── */}
             <div>
-              <h1 className="font-heading font-semibold text-[2rem] md:text-5xl text-navy leading-tight mb-5">
-                Get Found. Get Understood. Get Recommended by AI.
+              <h1 className="font-heading font-semibold text-[2rem] md:text-5xl text-navy leading-tight mb-3">
+                <span className="block">Get Found.</span>
+                <span className="block">Get Understood.</span>
+                <span className="block">Get Recommended by AI.</span>
               </h1>
+              {/* ── AI Visibility badge ── */}
+              <div className="inline-flex items-center gap-1.5 mb-5 px-3 py-1 rounded-full border border-teal/30 bg-teal/[0.07]">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" aria-hidden="true" />
+                <span className="text-[11px] font-heading font-semibold tracking-[0.08em] uppercase text-teal">
+                  AI Visibility for Businesses
+                </span>
+              </div>
               <p className="text-xl md:text-2xl font-heading font-medium text-graphite leading-snug mb-5">
                 When customers ask AI who to call, will your business come up?
               </p>
