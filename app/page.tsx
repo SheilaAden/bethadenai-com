@@ -291,7 +291,7 @@ export default function Home() {
 
             {/* ── Left: Headline, subheadline, copy, CTAs ── */}
             <div>
-              <h1 className="font-heading font-semibold text-4xl md:text-5xl text-navy leading-tight mb-5">
+              <h1 className="font-heading font-semibold text-[2rem] md:text-5xl text-navy leading-tight mb-5">
                 Get Found. Get Understood. Get Recommended by AI.
               </h1>
               <p className="text-xl md:text-2xl font-heading font-medium text-graphite leading-snug mb-5">
@@ -303,14 +303,18 @@ export default function Home() {
               </p>
 
               {/* ── Founder credibility strip ── */}
-              <div className="flex items-center gap-3 mb-8 py-4 px-4 rounded-xl bg-white/60 border border-navy/[0.08] shadow-sm">
-                <Image
-                  src="/images/beth-aden-ai-headshot.png"
-                  alt="Beth Aden, AI Visibility Strategist"
-                  width={52}
-                  height={52}
-                  className="rounded-full object-cover object-top flex-shrink-0 ring-2 ring-teal/20"
-                />
+              <div className="relative flex items-center gap-3 mb-8 py-4 pr-4 rounded-xl bg-white/60 border border-navy/[0.08] shadow-sm overflow-hidden">
+                {/* Teal left accent bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-teal rounded-l-xl" aria-hidden="true" />
+                <div className="pl-4 flex-shrink-0">
+                  <Image
+                    src="/images/beth-aden-ai-headshot.png"
+                    alt="Beth Aden, AI Visibility Strategist"
+                    width={52}
+                    height={52}
+                    className="rounded-full object-cover object-top ring-2 ring-teal/20"
+                  />
+                </div>
                 <div className="min-w-0">
                   <p className="font-heading font-semibold text-sm text-navy leading-none mb-0.5">
                     Beth Aden
