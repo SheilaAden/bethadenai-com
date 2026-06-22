@@ -41,7 +41,7 @@ const homeSchema = {
         'AI visibility strategy, GEO, AEO, and implementation for small businesses.',
     },
     {
-      '@type': 'Organization',
+      '@type': ['Organization', 'ProfessionalService'],
       '@id': 'https://bethadenai.com/#organization',
       name: 'Beth Aden AI',
       url: 'https://bethadenai.com',
@@ -52,7 +52,7 @@ const homeSchema = {
         '@type': 'Country',
         name: 'United States',
       },
-      founder: { '@id': 'https://bethadenai.com/#person' },
+      founder: { '@id': 'https://bethadenai.com/about#person' },
       contactPoint: {
         '@type': 'ContactPoint',
         email: 'beth@bethadenai.com',
@@ -60,14 +60,74 @@ const homeSchema = {
         areaServed: 'US',
         availableLanguage: 'English',
       },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Beth Aden AI Services and Products',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'AI Visibility Audit',
+              url: 'https://bethadenai.com/services/ai-visibility-audit',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'AI Strategy Consulting',
+              url: 'https://bethadenai.com/services/ai-strategy',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'AI Implementation Support',
+              url: 'https://bethadenai.com/services/ai-implementation',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Product',
+              name: 'AI Visibility Starter Kit™',
+              url: 'https://bethadenai.com/products/ai-visibility-starter-kit',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'DigitalDocument',
+              name: 'AI Visibility Readiness Checklist™',
+              url: 'https://bethadenai.com/resources/ai-visibility-readiness-checklist',
+            },
+          },
+        ],
+      },
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/#person',
+      '@id': 'https://bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
       url: 'https://bethadenai.com/about',
       worksFor: { '@id': 'https://bethadenai.com/#organization' },
+      knowsAbout: [
+        'AI Visibility',
+        'Generative Engine Optimization',
+        'Answer Engine Optimization',
+        'AI Search',
+        'AI Discoverability',
+        'Structured Data',
+        'Schema Markup',
+        'AI Implementation',
+        'Business Process Improvement',
+        'AI Strategy for Small Business',
+        'AI Visibility OS™',
+        'Beth Aden AI Visibility Framework™',
+      ],
     },
   ],
 }

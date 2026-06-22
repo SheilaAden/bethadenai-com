@@ -25,15 +25,38 @@ const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://bethadenai.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'AI Visibility Library',
+          item: 'https://bethadenai.com/resources',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'AI Visibility Readiness Checklist™',
+          item: 'https://bethadenai.com/resources/ai-visibility-readiness-checklist',
+        },
+      ],
+    },
+    {
       '@type': 'Organization',
       '@id': 'https://bethadenai.com/#organization',
       name: 'Beth Aden AI',
       url: 'https://bethadenai.com',
-      founder: { '@id': 'https://bethadenai.com/#person' },
+      founder: { '@id': 'https://bethadenai.com/about#person' },
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/#person',
+      '@id': 'https://bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
       url: 'https://bethadenai.com/about',
@@ -56,7 +79,7 @@ const schema = {
       description:
         'A free checklist to assess whether your business is visible, understandable, and recommendable across AI search and answer engines.',
       isPartOf: { '@id': 'https://bethadenai.com/#website' },
-      author: { '@id': 'https://bethadenai.com/#person' },
+      author: { '@id': 'https://bethadenai.com/about#person' },
       about: {
         '@type': 'Thing',
         name: 'AI Visibility',
@@ -69,7 +92,7 @@ const schema = {
       name: 'AI Visibility Readiness Checklist™',
       description:
         'A 25-item checklist across 7 categories that helps small business owners assess their readiness for AI search, answer engines, and automated decision systems.',
-      author: { '@id': 'https://bethadenai.com/#person' },
+      author: { '@id': 'https://bethadenai.com/about#person' },
       publisher: { '@id': 'https://bethadenai.com/#organization' },
       inLanguage: 'en-US',
       keywords: [
