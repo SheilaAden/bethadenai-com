@@ -91,9 +91,7 @@ const homeSchema = {
           {
             '@type': 'Offer',
             itemOffered: {
-              '@type': 'Product',
-              name: 'AI Visibility Starter Kit™',
-              url: 'https://bethadenai.com/products/ai-visibility-starter-kit',
+              '@id': 'https://bethadenai.com/products/ai-visibility-starter-kit#product',
             },
           },
           {

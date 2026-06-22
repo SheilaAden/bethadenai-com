@@ -147,7 +147,9 @@ const FAQS: FAQItem[] = [
 const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
+  '@id': 'https://bethadenai.com/products/ai-visibility-starter-kit#product',
   name: 'AI Visibility Starter Kit™',
+  url: 'https://bethadenai.com/products/ai-visibility-starter-kit',
   description:
     'A 38-page self-assessment and action guide for small business owners who want to understand their AI visibility gaps and improve how AI systems find, understand, and recommend their business.',
   brand: { '@type': 'Brand', name: 'Beth Aden AI' },
@@ -156,6 +158,7 @@ const productSchema = {
     price: '27.00',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
+    url: 'https://bethadenai.com/products/ai-visibility-starter-kit',
     seller: { '@type': 'Organization', name: 'Beth Aden AI' },
   },
 }
