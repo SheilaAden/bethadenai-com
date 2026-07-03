@@ -486,6 +486,59 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* ── SECTION: Specialized AI Visibility Solutions ── */}
+      <Section background="white">
+        <Container>
+          <h2 className="font-heading font-semibold text-3xl md:text-4xl text-navy leading-tight mb-4">
+            Specialized AI Visibility Solutions
+          </h2>
+          <p className="text-base text-graphite leading-relaxed max-w-2xl mb-10">
+            While Beth Aden AI helps businesses across many industries, some industries require
+            deeper expertise because every missed recommendation has a real human cost.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl">
+
+            {/* Card 1: Small Business */}
+            <div className="bg-cloud rounded-xl p-6 md:p-8 border border-silver shadow-sm flex flex-col">
+              <div className="w-7 h-[3px] bg-teal mb-5" aria-hidden="true" />
+              <h3 className="font-heading font-semibold text-xl text-navy mb-3">
+                Small Business AI Visibility
+              </h3>
+              <p className="text-base text-graphite leading-relaxed flex-grow mb-6">
+                AI Visibility Audits, AI search optimization, schema strategy, structured data,
+                and AI positioning for small businesses across the United States.
+              </p>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-1.5 text-teal font-heading font-semibold text-sm hover:text-navy transition-colors"
+              >
+                Learn More <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+
+            {/* Card 2: Recovery Centers */}
+            <div className="bg-cloud rounded-xl p-6 md:p-8 border border-silver shadow-sm flex flex-col">
+              <div className="w-7 h-[3px] bg-teal mb-5" aria-hidden="true" />
+              <h3 className="font-heading font-semibold text-xl text-navy mb-3">
+                Recovery Center AI Visibility
+              </h3>
+              <p className="text-base text-graphite leading-relaxed flex-grow mb-6">
+                Helping addiction treatment centers, recovery programs, and sober living homes
+                become visible when families ask AI where to find help.
+              </p>
+              <Link
+                href="/recovery"
+                className="inline-flex items-center gap-1.5 text-teal font-heading font-semibold text-sm hover:text-navy transition-colors"
+              >
+                Recovery Programs <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+
+          </div>
+        </Container>
+      </Section>
+
       {/* ── SECTION 1b: Free Checklist Promo ── */}
       <section className="bg-navy py-14 md:py-20">
         <Container>
