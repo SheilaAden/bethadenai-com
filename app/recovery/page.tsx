@@ -194,7 +194,7 @@ export default function RecoveryPage() {
             <ul className="space-y-4 mb-8">
               {[
                 'Exactly how AI engines currently describe — or ignore — your program',
-                'Where you're invisible compared to competitors in your space',
+                "Where you're invisible compared to competitors in your space",
                 'Your top 5 fixes, in priority order',
                 'Delivered within 5 business days',
                 'Work begins upon payment',
