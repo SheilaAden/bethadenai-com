@@ -48,7 +48,7 @@ const homeSchema = {
       description:
         'Beth Aden AI helps small businesses become visible, understandable, and recommendable across AI search, answer engines, and automated decision systems.',
       image: 'https://bethadenai.com/images/beth-aden-ai-headshot.png',
-      priceRange: '$27–$497+',
+      priceRange: '$27–$500+',
       email: 'beth@bethadenai.com',
       areaServed: {
         '@type': 'Country',

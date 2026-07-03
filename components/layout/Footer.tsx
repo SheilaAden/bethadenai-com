@@ -9,9 +9,10 @@ const footerNav = [
 ]
 
 const serviceLinks = [
-  { label: 'AI Visibility Audit',   href: '/services/ai-visibility-audit' },
-  { label: 'AI Strategy',           href: '/services/ai-strategy' },
-  { label: 'AI Implementation',     href: '/services/ai-implementation' },
+  { label: 'AI Visibility Audit',                href: '/services/ai-visibility-audit' },
+  { label: 'AI Strategy',                        href: '/services/ai-strategy' },
+  { label: 'AI Implementation',                  href: '/services/ai-implementation' },
+  { label: 'AI Visibility for Recovery Centers', href: '/recovery' },
 ]
 
 /**

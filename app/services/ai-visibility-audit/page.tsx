@@ -65,9 +65,10 @@ const auditSchema = {
       url: 'https://bethadenai.com/services/ai-visibility-audit',
       offers: {
         '@type': 'Offer',
-        price: '497',
+        price: '500',
         priceCurrency: 'USD',
-        description: 'Includes written report, gap analysis, prioritized recommendations, and 60-minute walkthrough session.',
+        url: 'https://bethadenai.com/services/ai-visibility-audit',
+        description: 'Full report of AI platform visibility, competitor gap analysis, top 5 prioritized fixes. Delivered within 5 business days. Work begins upon payment.',
       },
     },
     {
@@ -623,15 +624,30 @@ export default function AIVisibilityAuditPage() {
                 AI Visibility Audit
               </p>
               <p className="text-6xl md:text-7xl font-heading font-semibold text-gold mb-3">
-                $497
+                $500
               </p>
               <p className="text-sm text-silver/70 mb-6">
                 Flat fee &nbsp;·&nbsp; No hourly rates &nbsp;·&nbsp; No retainer required
               </p>
-              <p className="text-sm text-silver leading-relaxed">
-                Includes: written report, current visibility assessment, gap analysis, prioritized
-                recommendations, and 60-minute walkthrough session.
-              </p>
+              <ul className="text-sm text-silver leading-relaxed text-left space-y-3 mb-5">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-teal mt-0.5 flex-shrink-0" aria-hidden="true">✓</span>
+                  A full report of how AI engines like ChatGPT, Perplexity, and Google AI currently describe — or ignore — your business
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-teal mt-0.5 flex-shrink-0" aria-hidden="true">✓</span>
+                  Where you&#39;re invisible compared to your competitors
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-teal mt-0.5 flex-shrink-0" aria-hidden="true">✓</span>
+                  Your top 5 fixes, in priority order
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-teal mt-0.5 flex-shrink-0" aria-hidden="true">✓</span>
+                  Delivered within 5 business days
+                </li>
+              </ul>
+              <p className="text-xs text-silver/60 italic">Work begins upon payment.</p>
             </div>
 
             <div className="space-y-4 text-left mb-10">
@@ -651,7 +667,7 @@ export default function AIVisibilityAuditPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 bg-teal text-white font-heading font-semibold text-base rounded-md hover:bg-[#009991] transition-colors"
               >
-                Get Your AI Visibility Audit
+                Get Your Audit — $500
               </Link>
               <Link
                 href="/contact"
@@ -740,10 +756,10 @@ export default function AIVisibilityAuditPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 bg-teal text-white font-heading font-semibold text-base rounded-md hover:bg-[#009991] transition-colors"
               >
-                Get Your AI Visibility Audit
+                Get Your Audit — $500
               </Link>
               <p className="text-sm text-silver/70">
-                Beth Aden reviews every inquiry personally and responds within 1–2 business days.
+                Work begins upon payment. Delivered within 5 business days.
               </p>
               <Link
                 href="/services"
