@@ -10,8 +10,8 @@ interface ContactPayload {
 }
 
 async function syncLeadToVisibilityOS(payload: ContactPayload) {
-  const webhookUrl = process.env.VISIBILITY_OS_LEAD_WEBHOOK_URL
-  const webhookSecret = process.env.VISIBILITY_OS_LEAD_WEBHOOK_SECRET
+  const webhookUrl = process.env.visibility_os_lead_webhook_url
+  const webhookSecret = process.env.website_lead_webhook_secret
 
   if (!webhookUrl || !webhookSecret) {
     console.warn('[contact] Visibility OS lead sync is not configured.')
