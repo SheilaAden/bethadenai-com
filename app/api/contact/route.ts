@@ -6,8 +6,9 @@ import { Resend } from 'resend'
    POST /api/contact
 
    Required environment variables:
-     CONTACT_TO_EMAIL   — the inbox that receives form submissions
-     RESEND_API_KEY     — Resend API key (set in Vercel project settings)
+     CONTACT_TO_EMAIL            — inbox that receives submissions
+     RESEND_API_KEY              — Resend API key
+     website_lead_webhook_secret — shared secret with Visibility OS
    ───────────────────────────────────────────── */
 
 interface ContactPayload {
@@ -18,12 +19,56 @@ interface ContactPayload {
   message?: string
 }
 
+type LeadSyncResult = {
+  ok: boolean
+  status?: number
+  detail: string
+}
+
+const VISIBILITY_OS_LEAD_WEBHOOK_URL =
+  'https://beth-ai-visibility-os.vercel.app/api/integrations/website-leads'
+
+async function syncLeadToVisibilityOS(payload: ContactPayload): Promise<LeadSyncResult> {
+  const webhookSecret = process.env.website_lead_webhook_secret
+
+  if (!webhookSecret) {
+    return { ok: false, detail: 'website_lead_webhook_secret is missing' }
+  }
+
+  try {
+    const response = await fetch(VISIBILITY_OS_LEAD_WEBHOOK_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${webhookSecret}`,
+      },
+      body: JSON.stringify({
+        ...payload,
+        sourceUrl: 'https://bethadenai.com/contact',
+      }),
+      cache: 'no-store',
+    })
+
+    const detail = await response.text()
+
+    return {
+      ok: response.ok,
+      status: response.status,
+      detail,
+    }
+  } catch (error) {
+    return {
+      ok: false,
+      detail: error instanceof Error ? error.message : 'Unknown webhook request error',
+    }
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body: ContactPayload = await request.json()
     const { name, business, email, reason, message } = body
 
-    // ── Validate required fields ──────────────────────────
     if (!name?.trim() || !business?.trim() || !email?.trim() || !reason?.trim()) {
       return NextResponse.json(
         { error: 'Please fill in all required fields.' },
@@ -39,7 +84,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // ── Recipient from environment variable ───────────────
     const toEmail = process.env.CONTACT_TO_EMAIL
     if (!toEmail) {
       console.error('[contact] CONTACT_TO_EMAIL is not configured.')
@@ -58,7 +102,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // ── Build email content ───────────────────────────────
     const subject = `New inquiry: ${reason} — ${name} (${business})`
 
     const textBody = [
@@ -116,7 +159,6 @@ export async function POST(request: NextRequest) {
 </table>
 `
 
-    // ── Send via Resend ───────────────────────────────────
     const resend = new Resend(apiKey)
 
     const { error: sendError } = await resend.emails.send({
@@ -136,7 +178,14 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    console.log('[contact] Email sent via Resend.', { to: toEmail, subject, replyTo: email })
+    const leadSync = await syncLeadToVisibilityOS({ name, business, email, reason, message })
+
+    console.log('[contact] Submission processed.', {
+      to: toEmail,
+      subject,
+      replyTo: email,
+      leadSync,
+    })
 
     return NextResponse.json({ success: true })
   } catch (error) {
