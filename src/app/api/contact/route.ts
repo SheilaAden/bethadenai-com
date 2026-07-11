@@ -9,17 +9,24 @@ interface ContactPayload {
   message?: string
 }
 
+const VISIBILITY_OS_LEAD_WEBHOOK_URL =
+  'https://beth-ai-visibility-os.vercel.app/api/integrations/website-leads'
+
 async function syncLeadToVisibilityOS(payload: ContactPayload) {
-  const webhookUrl = process.env.visibility_os_lead_webhook_url
   const webhookSecret = process.env.website_lead_webhook_secret
 
-  if (!webhookUrl || !webhookSecret) {
-    console.warn('[contact] Visibility OS lead sync is not configured.')
+  if (!webhookSecret) {
+    console.error('[contact] website_lead_webhook_secret is missing in this deployment.')
     return
   }
 
+  console.log('[contact] Starting Visibility OS lead sync.', {
+    endpoint: VISIBILITY_OS_LEAD_WEBHOOK_URL,
+    hasSecret: true,
+  })
+
   try {
-    const response = await fetch(webhookUrl, {
+    const response = await fetch(VISIBILITY_OS_LEAD_WEBHOOK_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,8 +39,9 @@ async function syncLeadToVisibilityOS(payload: ContactPayload) {
       cache: 'no-store',
     })
 
+    const detail = await response.text()
+
     if (!response.ok) {
-      const detail = await response.text()
       console.error('[contact] Visibility OS lead sync failed.', {
         status: response.status,
         detail,
@@ -41,7 +49,10 @@ async function syncLeadToVisibilityOS(payload: ContactPayload) {
       return
     }
 
-    console.log('[contact] Inquiry synced to Visibility OS leads.')
+    console.log('[contact] Inquiry synced to Visibility OS leads.', {
+      status: response.status,
+      detail,
+    })
   } catch (error) {
     console.error('[contact] Visibility OS lead sync request failed:', error)
   }
