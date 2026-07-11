@@ -9,21 +9,30 @@ interface ContactPayload {
   message?: string
 }
 
+type LeadSyncResult =
+  | { status: 'success'; httpStatus: number; detail: string }
+  | { status: 'missing-secret' }
+  | { status: 'http-error'; httpStatus: number; detail: string }
+  | { status: 'network-error'; detail: string }
+
 const VISIBILITY_OS_LEAD_WEBHOOK_URL =
   'https://beth-ai-visibility-os.vercel.app/api/integrations/website-leads'
 
-async function syncLeadToVisibilityOS(payload: ContactPayload) {
+function escapeHtml(value: string) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;')
+}
+
+async function syncLeadToVisibilityOS(payload: ContactPayload): Promise<LeadSyncResult> {
   const webhookSecret = process.env.website_lead_webhook_secret
 
   if (!webhookSecret) {
-    console.error('[contact] website_lead_webhook_secret is missing in this deployment.')
-    return
+    return { status: 'missing-secret' }
   }
-
-  console.log('[contact] Starting Visibility OS lead sync.', {
-    endpoint: VISIBILITY_OS_LEAD_WEBHOOK_URL,
-    hasSecret: true,
-  })
 
   try {
     const response = await fetch(VISIBILITY_OS_LEAD_WEBHOOK_URL, {
@@ -42,31 +51,39 @@ async function syncLeadToVisibilityOS(payload: ContactPayload) {
     const detail = await response.text()
 
     if (!response.ok) {
-      console.error('[contact] Visibility OS lead sync failed.', {
-        status: response.status,
-        detail,
-      })
-      return
+      return {
+        status: 'http-error',
+        httpStatus: response.status,
+        detail: detail.slice(0, 500),
+      }
     }
 
-    console.log('[contact] Inquiry synced to Visibility OS leads.', {
-      status: response.status,
-      detail,
-    })
+    return {
+      status: 'success',
+      httpStatus: response.status,
+      detail: detail.slice(0, 500),
+    }
   } catch (error) {
-    console.error('[contact] Visibility OS lead sync request failed:', error)
+    return {
+      status: 'network-error',
+      detail: error instanceof Error ? error.message : String(error),
+    }
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: ContactPayload = await request.json()
-    const { name, business, email, reason, message } = body
+    const name = body.name?.trim()
+    const business = body.business?.trim()
+    const email = body.email?.trim()
+    const reason = body.reason?.trim()
+    const message = body.message?.trim() || ''
 
-    if (!name?.trim() || !business?.trim() || !email?.trim() || !reason?.trim()) {
+    if (!name || !business || !email || !reason) {
       return NextResponse.json(
         { error: 'Please fill in all required fields.' },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
@@ -74,87 +91,48 @@ export async function POST(request: NextRequest) {
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: 'Please enter a valid email address.' },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
     const toEmail = process.env.CONTACT_TO_EMAIL
-    if (!toEmail) {
-      console.error('[contact] CONTACT_TO_EMAIL is not configured.')
-      return NextResponse.json(
-        { error: 'Server configuration error. Please try again later.' },
-        { status: 500 }
-      )
-    }
-
     const apiKey = process.env.RESEND_API_KEY
-    if (!apiKey) {
-      console.error('[contact] RESEND_API_KEY is not configured.')
+
+    if (!toEmail || !apiKey) {
+      console.error('[contact] Required email configuration is missing.', {
+        hasContactToEmail: Boolean(toEmail),
+        hasResendApiKey: Boolean(apiKey),
+      })
       return NextResponse.json(
         { error: 'Server configuration error. Please try again later.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
     const subject = `New inquiry: ${reason} — ${name} (${business})`
-
     const textBody = [
-      `Name:          ${name}`,
-      `Business:      ${business}`,
-      `Email:         ${email}`,
-      `Reason:        ${reason}`,
-      ``,
-      `Message:`,
-      message?.trim() || '(no message provided)',
+      `Name: ${name}`,
+      `Business: ${business}`,
+      `Email: ${email}`,
+      `Reason: ${reason}`,
+      '',
+      'Message:',
+      message || '(no message provided)',
     ].join('\n')
 
     const htmlBody = `
-<table style="font-family: Arial, sans-serif; font-size: 15px; color: #2E3A46; max-width: 600px; width: 100%; border-collapse: collapse;">
-  <tr>
-    <td style="padding: 24px 0 8px;">
-      <h2 style="margin: 0; font-size: 18px; color: #0B1F33;">New Contact Form Submission</h2>
-    </td>
-  </tr>
-  <tr>
-    <td style="padding: 16px 0; border-top: 1px solid #E8EDF2;">
-      <table style="width: 100%; border-collapse: collapse;">
-        <tr>
-          <td style="padding: 6px 16px 6px 0; font-weight: bold; color: #0B1F33; width: 130px; vertical-align: top;">Name</td>
-          <td style="padding: 6px 0; color: #2E3A46;">${name}</td>
-        </tr>
-        <tr>
-          <td style="padding: 6px 16px 6px 0; font-weight: bold; color: #0B1F33; vertical-align: top;">Business</td>
-          <td style="padding: 6px 0; color: #2E3A46;">${business}</td>
-        </tr>
-        <tr>
-          <td style="padding: 6px 16px 6px 0; font-weight: bold; color: #0B1F33; vertical-align: top;">Email</td>
-          <td style="padding: 6px 0; color: #2E3A46;"><a href="mailto:${email}" style="color: #00B8AE;">${email}</a></td>
-        </tr>
-        <tr>
-          <td style="padding: 6px 16px 6px 0; font-weight: bold; color: #0B1F33; vertical-align: top;">Reason</td>
-          <td style="padding: 6px 0; color: #2E3A46;">${reason}</td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-  <tr>
-    <td style="padding: 16px 0; border-top: 1px solid #E8EDF2;">
-      <p style="margin: 0 0 8px; font-weight: bold; color: #0B1F33;">Message</p>
-      <p style="margin: 0; color: #2E3A46; white-space: pre-wrap;">${message?.trim() || '(no message provided)'}</p>
-    </td>
-  </tr>
-  <tr>
-    <td style="padding: 16px 0; border-top: 1px solid #E8EDF2;">
-      <p style="margin: 0; font-size: 13px; color: #9AA5AF;">
-        Reply directly to this email to respond to ${name}.
-      </p>
-    </td>
-  </tr>
-</table>
-`
+      <div style="font-family:Arial,sans-serif;color:#2E3A46;max-width:600px">
+        <h2 style="color:#0B1F33">New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Business:</strong> ${escapeHtml(business)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Reason:</strong> ${escapeHtml(reason)}</p>
+        <p><strong>Message:</strong></p>
+        <p style="white-space:pre-wrap">${escapeHtml(message || '(no message provided)')}</p>
+      </div>
+    `
 
     const resend = new Resend(apiKey)
-
     const { error: sendError } = await resend.emails.send({
       from: 'Beth Aden AI Website <onboarding@resend.dev>',
       to: [toEmail],
@@ -168,20 +146,31 @@ export async function POST(request: NextRequest) {
       console.error('[contact] Resend error:', sendError)
       return NextResponse.json(
         { error: 'Failed to send message. Please try again or email directly.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
-    await syncLeadToVisibilityOS({ name, business, email, reason, message })
+    const leadSync = await syncLeadToVisibilityOS({
+      name,
+      business,
+      email,
+      reason,
+      message,
+    })
 
-    console.log('[contact] Email sent via Resend.', { to: toEmail, subject, replyTo: email })
+    console.log('[contact] Submission completed.', {
+      to: toEmail,
+      subject,
+      replyTo: email,
+      leadSync,
+    })
 
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true, leadSync })
   } catch (error) {
     console.error('[contact] Unexpected error:', error)
     return NextResponse.json(
       { error: 'An unexpected error occurred. Please try again.' },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }
