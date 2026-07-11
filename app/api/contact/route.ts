@@ -6,9 +6,8 @@ import { Resend } from 'resend'
    POST /api/contact
 
    Required environment variables:
-     CONTACT_TO_EMAIL            — inbox that receives submissions
-     RESEND_API_KEY              — Resend API key
-     website_lead_webhook_secret — shared secret with Visibility OS
+     CONTACT_TO_EMAIL — inbox that receives submissions
+     RESEND_API_KEY   — Resend API key
    ───────────────────────────────────────────── */
 
 interface ContactPayload {
@@ -25,26 +24,28 @@ type LeadSyncResult = {
   detail: string
 }
 
-const VISIBILITY_OS_LEAD_WEBHOOK_URL =
-  'https://beth-ai-visibility-os.vercel.app/api/integrations/website-leads'
+const VISIBILITY_OS_RPC_URL =
+  'https://ixbfjhnyazbvbwuujefz.supabase.co/rest/v1/rpc/submit_website_lead'
 
-async function syncLeadToVisibilityOS(payload: ContactPayload): Promise<LeadSyncResult> {
-  const webhookSecret = process.env.website_lead_webhook_secret
+const VISIBILITY_OS_PUBLISHABLE_KEY =
+  'sb_publishable_tF7eX37pDljZrj_WzccsiA_tJpx-9RL'
 
-  if (!webhookSecret) {
-    return { ok: false, detail: 'website_lead_webhook_secret is missing' }
-  }
-
+async function saveLeadToVisibilityOS(payload: ContactPayload): Promise<LeadSyncResult> {
   try {
-    const response = await fetch(VISIBILITY_OS_LEAD_WEBHOOK_URL, {
+    const response = await fetch(VISIBILITY_OS_RPC_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${webhookSecret}`,
+        apikey: VISIBILITY_OS_PUBLISHABLE_KEY,
+        Authorization: `Bearer ${VISIBILITY_OS_PUBLISHABLE_KEY}`,
       },
       body: JSON.stringify({
-        ...payload,
-        sourceUrl: 'https://bethadenai.com/contact',
+        p_name: payload.name,
+        p_business: payload.business,
+        p_email: payload.email,
+        p_reason: payload.reason,
+        p_message: payload.message ?? null,
+        p_source_url: 'https://bethadenai.com/contact',
       }),
       cache: 'no-store',
     })
@@ -59,7 +60,7 @@ async function syncLeadToVisibilityOS(payload: ContactPayload): Promise<LeadSync
   } catch (error) {
     return {
       ok: false,
-      detail: error instanceof Error ? error.message : 'Unknown webhook request error',
+      detail: error instanceof Error ? error.message : 'Unknown database request error',
     }
   }
 }
@@ -178,7 +179,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const leadSync = await syncLeadToVisibilityOS({ name, business, email, reason, message })
+    const leadSync = await saveLeadToVisibilityOS({ name, business, email, reason, message })
 
     console.log('[contact] Submission processed.', {
       to: toEmail,
@@ -187,7 +188,17 @@ export async function POST(request: NextRequest) {
       leadSync,
     })
 
-    return NextResponse.json({ success: true })
+    if (!leadSync.ok) {
+      return NextResponse.json(
+        {
+          error: 'Your message was emailed, but the lead record could not be saved.',
+          leadSync,
+        },
+        { status: 502 }
+      )
+    }
+
+    return NextResponse.json({ success: true, leadSync })
   } catch (error) {
     console.error('[contact] Unexpected error:', error)
     return NextResponse.json(
