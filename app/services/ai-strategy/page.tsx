@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Build a clear, prioritized roadmap for your AI visibility. Beth Aden AI's AI Strategy service turns audit findings into a specific plan your business can act on.",
   alternates: {
-    canonical: 'https://bethadenai.com/services/ai-strategy',
+    canonical: 'https://www.bethadenai.com/services/ai-strategy',
   },
 }
 
@@ -37,42 +37,42 @@ const strategySchema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Services',
-          item: 'https://bethadenai.com/services',
+          item: 'https://www.bethadenai.com/services',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'AI Strategy',
-          item: 'https://bethadenai.com/services/ai-strategy',
+          item: 'https://www.bethadenai.com/services/ai-strategy',
         },
       ],
     },
     {
       '@type': 'Service',
-      '@id': 'https://bethadenai.com/services/ai-strategy#service',
+      '@id': 'https://www.bethadenai.com/services/ai-strategy#service',
       name: 'AI Strategy',
-      provider: { '@id': 'https://bethadenai.com/#organization' },
+      provider: { '@id': 'https://www.bethadenai.com/#organization' },
       description:
         'A focused planning engagement that takes your AI visibility audit findings and produces a sequenced, prioritized roadmap specific to your business goals and resources.',
       serviceType: 'AI Strategy Consulting',
       areaServed: 'US',
-      url: 'https://bethadenai.com/services/ai-strategy',
+      url: 'https://www.bethadenai.com/services/ai-strategy',
     },
     {
       '@type': 'Organization',
-      '@id': 'https://bethadenai.com/#organization',
+      '@id': 'https://www.bethadenai.com/#organization',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
+      url: 'https://www.bethadenai.com',
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/about#person',
+      '@id': 'https://www.bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
     },

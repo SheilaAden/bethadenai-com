@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description:
     'Learn about Beth Aden — AI visibility strategist helping business owners understand what AI sees when it looks at their business, and building the changes that make it better.',
   alternates: {
-    canonical: 'https://bethadenai.com/about',
+    canonical: 'https://www.bethadenai.com/about',
   },
 }
 
@@ -39,26 +39,27 @@ const aboutSchema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'About',
-          item: 'https://bethadenai.com/about',
+          item: 'https://www.bethadenai.com/about',
         },
       ],
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/about#person',
+      '@id': 'https://www.bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
       description: 'Founder of Beth Aden AI, creator of AI Visibility OS™ and the Beth Aden AI Visibility Framework™. AI Visibility Strategist helping small businesses become findable, understandable, and recommendable in AI search.',
+      sameAs: ['https://www.linkedin.com/in/bethadenai/'],
       worksFor: {
-        '@id': 'https://bethadenai.com/#organization',
+        '@id': 'https://www.bethadenai.com/#organization',
       },
-      url: 'https://bethadenai.com/about',
+      url: 'https://www.bethadenai.com/about',
       knowsAbout: [
         'AI Visibility',
         'Generative Engine Optimization',
@@ -74,12 +75,12 @@ const aboutSchema = {
     },
     {
       '@type': 'Organization',
-      '@id': 'https://bethadenai.com/#organization',
+      '@id': 'https://www.bethadenai.com/#organization',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
+      url: 'https://www.bethadenai.com',
       description: 'AI visibility consulting practice founded by Beth Aden. Services are delivered using the Beth Aden AI Visibility Framework™, a structured methodology for AI visibility assessment, strategy, and implementation.',
       founder: {
-        '@id': 'https://bethadenai.com/about#person',
+        '@id': 'https://www.bethadenai.com/about#person',
       },
     },
   ],

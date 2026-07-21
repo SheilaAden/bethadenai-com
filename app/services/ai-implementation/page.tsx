@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Beth Aden AI's AI Implementation service executes your AI visibility roadmap — making the specific changes that help AI systems find, understand, and recommend your business.",
   alternates: {
-    canonical: 'https://bethadenai.com/services/ai-implementation',
+    canonical: 'https://www.bethadenai.com/services/ai-implementation',
   },
 }
 
@@ -37,42 +37,42 @@ const implementationSchema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Services',
-          item: 'https://bethadenai.com/services',
+          item: 'https://www.bethadenai.com/services',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'AI Implementation',
-          item: 'https://bethadenai.com/services/ai-implementation',
+          item: 'https://www.bethadenai.com/services/ai-implementation',
         },
       ],
     },
     {
       '@type': 'Service',
-      '@id': 'https://bethadenai.com/services/ai-implementation#service',
+      '@id': 'https://www.bethadenai.com/services/ai-implementation#service',
       name: 'AI Implementation',
-      provider: { '@id': 'https://bethadenai.com/#organization' },
+      provider: { '@id': 'https://www.bethadenai.com/#organization' },
       description:
         'Guided execution of your AI visibility strategy — making the specific changes to structured data, content, entity presence, and cross-platform consistency that help AI systems find, understand, and recommend your business.',
       serviceType: 'AI Implementation',
       areaServed: 'US',
-      url: 'https://bethadenai.com/services/ai-implementation',
+      url: 'https://www.bethadenai.com/services/ai-implementation',
     },
     {
       '@type': 'Organization',
-      '@id': 'https://bethadenai.com/#organization',
+      '@id': 'https://www.bethadenai.com/#organization',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
+      url: 'https://www.bethadenai.com',
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/about#person',
+      '@id': 'https://www.bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
     },

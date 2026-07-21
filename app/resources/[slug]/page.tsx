@@ -33,15 +33,20 @@ export async function generateMetadata({
   const article = getArticleBySlug(slug)
   if (!article) return {}
 
-  const title = article.metaTitle ?? `${article.title} — Beth Aden AI`
-  const url = `https://bethadenai.com/resources/${article.slug}`
+  // Content files sometimes bake a literal "— Beth Aden AI" suffix into
+  // metaTitle. The root layout's title template already appends that
+  // suffix to every page title, so any trailing copy here is stripped
+  // to avoid a duplicated "— Beth Aden AI — Beth Aden AI" title.
+  const rawTitle = article.metaTitle ?? article.title
+  const title = rawTitle.replace(/\s*—\s*Beth Aden AI\s*$/, '')
+  const url = `https://www.bethadenai.com/resources/${article.slug}`
 
   return {
     title,
     description: article.description,
     alternates: { canonical: url },
     openGraph: {
-      title: article.metaTitle ?? article.title,
+      title,
       description: article.description,
       url,
       type: 'article',
@@ -77,34 +82,34 @@ export default async function ArticlePage({
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://bethadenai.com/',
+            item: 'https://www.bethadenai.com/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'AI Visibility Library',
-            item: 'https://bethadenai.com/resources',
+            item: 'https://www.bethadenai.com/resources',
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: article.title,
-            item: `https://bethadenai.com/resources/${article.slug}`,
+            item: `https://www.bethadenai.com/resources/${article.slug}`,
           },
         ],
       },
       {
         '@type': 'Article',
-        '@id': `https://bethadenai.com/resources/${article.slug}#article`,
+        '@id': `https://www.bethadenai.com/resources/${article.slug}#article`,
         headline: article.title,
         description: article.description,
-        url: `https://bethadenai.com/resources/${article.slug}`,
+        url: `https://www.bethadenai.com/resources/${article.slug}`,
         ...(article.date && { datePublished: article.date }),
-        author: { '@id': 'https://bethadenai.com/about#person' },
-        publisher: { '@id': 'https://bethadenai.com/#organization' },
+        author: { '@id': 'https://www.bethadenai.com/about#person' },
+        publisher: { '@id': 'https://www.bethadenai.com/#organization' },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `https://bethadenai.com/resources/${article.slug}`,
+          '@id': `https://www.bethadenai.com/resources/${article.slug}`,
         },
       },
       ...(article.faqs?.length
@@ -124,16 +129,16 @@ export default async function ArticlePage({
         : []),
       {
         '@type': 'Person',
-        '@id': 'https://bethadenai.com/about#person',
+        '@id': 'https://www.bethadenai.com/about#person',
         name: 'Beth Aden',
         jobTitle: 'AI Visibility Strategist',
-        worksFor: { '@id': 'https://bethadenai.com/#organization' },
+        worksFor: { '@id': 'https://www.bethadenai.com/#organization' },
       },
       {
         '@type': 'Organization',
-        '@id': 'https://bethadenai.com/#organization',
+        '@id': 'https://www.bethadenai.com/#organization',
         name: 'Beth Aden AI',
-        url: 'https://bethadenai.com',
+        url: 'https://www.bethadenai.com',
       },
     ],
   }

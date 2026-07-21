@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Discover where your business stands in AI search. Beth Aden AI's audit shows how AI systems find, understand, and recommend you — and exactly what to fix.",
   alternates: {
-    canonical: 'https://bethadenai.com/services/ai-visibility-audit',
+    canonical: 'https://www.bethadenai.com/services/ai-visibility-audit',
   },
 }
 
@@ -37,49 +37,49 @@ const auditSchema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Services',
-          item: 'https://bethadenai.com/services',
+          item: 'https://www.bethadenai.com/services',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'AI Visibility Audit',
-          item: 'https://bethadenai.com/services/ai-visibility-audit',
+          item: 'https://www.bethadenai.com/services/ai-visibility-audit',
         },
       ],
     },
     {
       '@type': 'Service',
-      '@id': 'https://bethadenai.com/services/ai-visibility-audit#service',
+      '@id': 'https://www.bethadenai.com/services/ai-visibility-audit#service',
       name: 'AI Visibility Audit',
-      provider: { '@id': 'https://bethadenai.com/#organization' },
+      provider: { '@id': 'https://www.bethadenai.com/#organization' },
       description:
         'A structured assessment of how AI-powered systems find, interpret, and represent your business across AI search platforms and answer engines — with a gap analysis and prioritized recommendations.',
       serviceType: 'AI Visibility Audit',
       areaServed: 'US',
-      url: 'https://bethadenai.com/services/ai-visibility-audit',
+      url: 'https://www.bethadenai.com/services/ai-visibility-audit',
       offers: {
         '@type': 'Offer',
         price: '500',
         priceCurrency: 'USD',
-        url: 'https://bethadenai.com/services/ai-visibility-audit',
+        url: 'https://www.bethadenai.com/services/ai-visibility-audit',
         description: 'Full report of AI platform visibility, competitor gap analysis, top 5 prioritized fixes. Delivered within 5 business days. Work begins upon payment.',
       },
     },
     {
       '@type': 'Organization',
-      '@id': 'https://bethadenai.com/#organization',
+      '@id': 'https://www.bethadenai.com/#organization',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
+      url: 'https://www.bethadenai.com',
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/about#person',
+      '@id': 'https://www.bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
     },

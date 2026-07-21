@@ -15,11 +15,11 @@ import type { FAQItem } from '@/types'
    ───────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'AI Visibility Library — Resources for Business Owners — Beth Aden AI',
+  title: 'AI Visibility Library — Resources for Business Owners',
   description:
     'Plain-language resources on AI visibility, GEO, AEO, and AI search for small businesses. Written by Beth Aden, AI visibility strategist. No jargon. No hype. Just useful.',
   alternates: {
-    canonical: 'https://bethadenai.com/resources',
+    canonical: 'https://www.bethadenai.com/resources',
   },
 }
 
@@ -39,28 +39,28 @@ const librarySchema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'AI Visibility Library',
-          item: 'https://bethadenai.com/resources',
+          item: 'https://www.bethadenai.com/resources',
         },
       ],
     },
     {
       '@type': 'CollectionPage',
-      '@id': 'https://bethadenai.com/resources#page',
+      '@id': 'https://www.bethadenai.com/resources#page',
       name: 'AI Visibility Library',
       description:
         'Plain-language resources on AI visibility, GEO, AEO, and AI search for small businesses. Written by Beth Aden, AI visibility strategist.',
-      url: 'https://bethadenai.com/resources',
+      url: 'https://www.bethadenai.com/resources',
       author: {
-        '@id': 'https://bethadenai.com/about#person',
+        '@id': 'https://www.bethadenai.com/about#person',
       },
       publisher: {
-        '@id': 'https://bethadenai.com/#organization',
+        '@id': 'https://www.bethadenai.com/#organization',
       },
     },
     {
@@ -72,14 +72,14 @@ const librarySchema = {
         content entity.
       */
       '@type': 'ItemList',
-      '@id': 'https://bethadenai.com/resources#article-list',
+      '@id': 'https://www.bethadenai.com/resources#article-list',
       name: 'AI Visibility Library Articles',
       itemListElement: [
         {
           '@type': 'ListItem',
           position: 1,
           name: 'What Is AI Visibility? A Plain-Language Guide for Business Owners',
-          url: 'https://bethadenai.com/resources/what-is-ai-visibility',
+          url: 'https://www.bethadenai.com/resources/what-is-ai-visibility',
           description:
             'AI visibility is the degree to which AI-powered systems can find your business, understand what it does, and confidently recommend it. This article defines the concept, explains how it relates to SEO, and describes what low AI visibility costs a business in practical terms.',
         },
@@ -87,7 +87,7 @@ const librarySchema = {
           '@type': 'ListItem',
           position: 2,
           name: 'What Is Generative Engine Optimization (GEO)?',
-          url: 'https://bethadenai.com/resources/what-is-geo',
+          url: 'https://www.bethadenai.com/resources/what-is-geo',
           description:
             'GEO is the practice of building a digital presence that generative AI systems are willing and able to recommend. This article explains what GEO is, how generative AI systems evaluate sources, and what small businesses should focus on first.',
         },
@@ -95,7 +95,7 @@ const librarySchema = {
           '@type': 'ListItem',
           position: 3,
           name: 'What Is Answer Engine Optimization (AEO)?',
-          url: 'https://bethadenai.com/resources/what-is-aeo',
+          url: 'https://www.bethadenai.com/resources/what-is-aeo',
           description:
             'Answer engines respond to questions directly rather than returning a list of links. AEO is the discipline of making your business the answer they surface. This article explains what AEO is and what the practical requirements look like for a small business.',
         },
@@ -103,7 +103,7 @@ const librarySchema = {
           '@type': 'ListItem',
           position: 4,
           name: "Why Isn't My Business Showing Up in AI Search?",
-          url: 'https://bethadenai.com/resources/why-isnt-my-business-showing-up-in-ai-search',
+          url: 'https://www.bethadenai.com/resources/why-isnt-my-business-showing-up-in-ai-search',
           description:
             'The six most common reasons businesses are invisible in AI-powered search results — and what each reason means for how you approach fixing it.',
         },
@@ -111,7 +111,7 @@ const librarySchema = {
           '@type': 'ListItem',
           position: 5,
           name: 'How Does ChatGPT Decide Which Businesses to Recommend?',
-          url: 'https://bethadenai.com/resources/how-does-chatgpt-decide-which-businesses-to-recommend',
+          url: 'https://www.bethadenai.com/resources/how-does-chatgpt-decide-which-businesses-to-recommend',
           description:
             'AI recommendation is not random. This article explains the signals and logic that lead AI systems like ChatGPT to recommend one business over another — and what that means for how you build your digital presence.',
         },
@@ -119,16 +119,16 @@ const librarySchema = {
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/about#person',
+      '@id': 'https://www.bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
-      worksFor: { '@id': 'https://bethadenai.com/#organization' },
+      worksFor: { '@id': 'https://www.bethadenai.com/#organization' },
     },
     {
       '@type': 'Organization',
-      '@id': 'https://bethadenai.com/#organization',
+      '@id': 'https://www.bethadenai.com/#organization',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
+      url: 'https://www.bethadenai.com',
     },
   ],
 }

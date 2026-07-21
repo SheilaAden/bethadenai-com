@@ -13,11 +13,11 @@ import { ContactForm } from '@/components/global/ContactForm'
    ───────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'Contact Beth Aden AI — Start a Conversation',
+  title: 'Contact — Start a Conversation',
   description:
     'Ready to improve your AI visibility? Beth Aden AI personally reviews every inquiry. Reach out to start a conversation about where your business stands in AI search.',
   alternates: {
-    canonical: 'https://bethadenai.com/contact',
+    canonical: 'https://www.bethadenai.com/contact',
   },
 }
 
@@ -37,32 +37,32 @@ const contactSchema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Contact',
-          item: 'https://bethadenai.com/contact',
+          item: 'https://www.bethadenai.com/contact',
         },
       ],
     },
     {
       '@type': 'ContactPage',
-      '@id': 'https://bethadenai.com/contact#page',
+      '@id': 'https://www.bethadenai.com/contact#page',
       name: 'Contact Beth Aden AI',
-      url: 'https://bethadenai.com/contact',
+      url: 'https://www.bethadenai.com/contact',
       description:
         'Contact Beth Aden AI to start a conversation about AI visibility for your business.',
       provider: {
-        '@id': 'https://bethadenai.com/#organization',
+        '@id': 'https://www.bethadenai.com/#organization',
       },
     },
     {
       '@type': 'Organization',
-      '@id': 'https://bethadenai.com/#organization',
+      '@id': 'https://www.bethadenai.com/#organization',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
+      url: 'https://www.bethadenai.com',
     },
   ],
 }

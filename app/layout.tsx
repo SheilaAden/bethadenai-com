@@ -35,14 +35,14 @@ export const metadata: Metadata = {
   },
   description:
     'Beth Aden AI helps small businesses become visible, understandable, and recommendable across AI search, answer engines, and automated decision systems.',
-  metadataBase: new URL('https://bethadenai.com'),
+  metadataBase: new URL('https://www.bethadenai.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://bethadenai.com',
+    url: 'https://www.bethadenai.com',
     siteName: 'Beth Aden AI',
     title: 'Beth Aden AI — AI Visibility for Small Businesses',
     description:

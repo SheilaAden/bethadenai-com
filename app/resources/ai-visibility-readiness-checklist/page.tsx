@@ -4,17 +4,17 @@ import { LeadMagnetForm } from '@/components/global/LeadMagnetForm'
 // ── Metadata ───────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: 'AI Visibility Readiness Checklist™ | Beth Aden AI',
+  title: 'AI Visibility Readiness Checklist™',
   description:
     'Find out if AI search engines can find and recommend your business. Download the free AI Visibility Readiness Checklist™ — 25 items, 7 categories, no technical background required.',
   alternates: {
-    canonical: 'https://bethadenai.com/resources/ai-visibility-readiness-checklist',
+    canonical: 'https://www.bethadenai.com/resources/ai-visibility-readiness-checklist',
   },
   openGraph: {
-    title: 'AI Visibility Readiness Checklist™ | Beth Aden AI',
+    title: 'AI Visibility Readiness Checklist™',
     description:
       'Find out if AI search engines can find and recommend your business. Download the free checklist.',
-    url: 'https://bethadenai.com/resources/ai-visibility-readiness-checklist',
+    url: 'https://www.bethadenai.com/resources/ai-visibility-readiness-checklist',
     type: 'website',
   },
 }
@@ -31,36 +31,36 @@ const schema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'AI Visibility Library',
-          item: 'https://bethadenai.com/resources',
+          item: 'https://www.bethadenai.com/resources',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'AI Visibility Readiness Checklist™',
-          item: 'https://bethadenai.com/resources/ai-visibility-readiness-checklist',
+          item: 'https://www.bethadenai.com/resources/ai-visibility-readiness-checklist',
         },
       ],
     },
     {
       '@type': 'Organization',
-      '@id': 'https://bethadenai.com/#organization',
+      '@id': 'https://www.bethadenai.com/#organization',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
-      founder: { '@id': 'https://bethadenai.com/about#person' },
+      url: 'https://www.bethadenai.com',
+      founder: { '@id': 'https://www.bethadenai.com/about#person' },
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/about#person',
+      '@id': 'https://www.bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
-      url: 'https://bethadenai.com/about',
-      worksFor: { '@id': 'https://bethadenai.com/#organization' },
+      url: 'https://www.bethadenai.com/about',
+      worksFor: { '@id': 'https://www.bethadenai.com/#organization' },
       knowsAbout: [
         'AI Visibility',
         'Generative Engine Optimization',
@@ -73,13 +73,13 @@ const schema = {
     },
     {
       '@type': 'WebPage',
-      '@id': 'https://bethadenai.com/resources/ai-visibility-readiness-checklist#webpage',
-      url: 'https://bethadenai.com/resources/ai-visibility-readiness-checklist',
+      '@id': 'https://www.bethadenai.com/resources/ai-visibility-readiness-checklist#webpage',
+      url: 'https://www.bethadenai.com/resources/ai-visibility-readiness-checklist',
       name: 'AI Visibility Readiness Checklist™',
       description:
         'A free checklist to assess whether your business is visible, understandable, and recommendable across AI search and answer engines.',
-      isPartOf: { '@id': 'https://bethadenai.com/#website' },
-      author: { '@id': 'https://bethadenai.com/about#person' },
+      isPartOf: { '@id': 'https://www.bethadenai.com/#website' },
+      author: { '@id': 'https://www.bethadenai.com/about#person' },
       about: {
         '@type': 'Thing',
         name: 'AI Visibility',
@@ -92,8 +92,8 @@ const schema = {
       name: 'AI Visibility Readiness Checklist™',
       description:
         'A 25-item checklist across 7 categories that helps small business owners assess their readiness for AI search, answer engines, and automated decision systems.',
-      author: { '@id': 'https://bethadenai.com/about#person' },
-      publisher: { '@id': 'https://bethadenai.com/#organization' },
+      author: { '@id': 'https://www.bethadenai.com/about#person' },
+      publisher: { '@id': 'https://www.bethadenai.com/#organization' },
       inLanguage: 'en-US',
       keywords: [
         'AI visibility checklist',

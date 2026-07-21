@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     'Beth Aden speaks to business owners, associations, and professional groups on AI visibility, AI search, and practical AI adoption. Talks designed for business audiences, not technical ones.',
   alternates: {
-    canonical: 'https://bethadenai.com/speaking',
+    canonical: 'https://www.bethadenai.com/speaking',
   },
 }
 
@@ -39,26 +39,26 @@ const speakingSchema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Speaking',
-          item: 'https://bethadenai.com/speaking',
+          item: 'https://www.bethadenai.com/speaking',
         },
       ],
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/about#person',
+      '@id': 'https://www.bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
       description: 'Founder of Beth Aden AI, creator of AI Visibility OS™ and the Beth Aden AI Visibility Framework™. AI Visibility Strategist and speaker on AI search, GEO, AEO, and practical AI adoption for small businesses.',
       worksFor: {
-        '@id': 'https://bethadenai.com/#organization',
+        '@id': 'https://www.bethadenai.com/#organization',
       },
-      url: 'https://bethadenai.com/about',
+      url: 'https://www.bethadenai.com/about',
       knowsAbout: [
         'AI Visibility',
         'Generative Engine Optimization',
@@ -73,9 +73,9 @@ const speakingSchema = {
     },
     {
       '@type': 'Organization',
-      '@id': 'https://bethadenai.com/#organization',
+      '@id': 'https://www.bethadenai.com/#organization',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
+      url: 'https://www.bethadenai.com',
     },
   ],
 }

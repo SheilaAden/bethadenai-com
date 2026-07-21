@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     'Beth Aden AI helps small businesses become visible, understandable, and recommendable across AI search, answer engines, and automated decision systems. Start with an AI Visibility Audit.',
   alternates: {
-    canonical: 'https://bethadenai.com/',
+    canonical: 'https://www.bethadenai.com/',
   },
 }
 
@@ -34,27 +34,28 @@ const homeSchema = {
   '@graph': [
     {
       '@type': 'WebSite',
-      '@id': 'https://bethadenai.com/#website',
+      '@id': 'https://www.bethadenai.com/#website',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
+      url: 'https://www.bethadenai.com',
       description:
         'AI visibility strategy, GEO, AEO, and implementation for small businesses.',
     },
     {
       '@type': ['Organization', 'ProfessionalService'],
-      '@id': 'https://bethadenai.com/#organization',
+      '@id': 'https://www.bethadenai.com/#organization',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
+      url: 'https://www.bethadenai.com',
       description:
         'Beth Aden AI helps small businesses become visible, understandable, and recommendable across AI search, answer engines, and automated decision systems.',
-      image: 'https://bethadenai.com/images/beth-aden-ai-headshot.png',
+      image: 'https://www.bethadenai.com/images/beth-aden-ai-headshot.png',
       priceRange: '$27–$500+',
       email: 'beth@bethadenai.com',
       areaServed: {
         '@type': 'Country',
         name: 'United States',
       },
-      founder: { '@id': 'https://bethadenai.com/about#person' },
+      sameAs: ['https://www.linkedin.com/in/bethadenai/'],
+      founder: { '@id': 'https://www.bethadenai.com/about#person' },
       contactPoint: {
         '@type': 'ContactPoint',
         email: 'beth@bethadenai.com',
@@ -71,7 +72,7 @@ const homeSchema = {
             itemOffered: {
               '@type': 'Service',
               name: 'AI Visibility Audit',
-              url: 'https://bethadenai.com/services/ai-visibility-audit',
+              url: 'https://www.bethadenai.com/services/ai-visibility-audit',
             },
           },
           {
@@ -79,7 +80,7 @@ const homeSchema = {
             itemOffered: {
               '@type': 'Service',
               name: 'AI Strategy Consulting',
-              url: 'https://bethadenai.com/services/ai-strategy',
+              url: 'https://www.bethadenai.com/services/ai-strategy',
             },
           },
           {
@@ -87,13 +88,13 @@ const homeSchema = {
             itemOffered: {
               '@type': 'Service',
               name: 'AI Implementation Support',
-              url: 'https://bethadenai.com/services/ai-implementation',
+              url: 'https://www.bethadenai.com/services/ai-implementation',
             },
           },
           {
             '@type': 'Offer',
             itemOffered: {
-              '@id': 'https://bethadenai.com/products/ai-visibility-starter-kit#product',
+              '@id': 'https://www.bethadenai.com/products/ai-visibility-starter-kit#product',
             },
           },
           {
@@ -101,7 +102,7 @@ const homeSchema = {
             itemOffered: {
               '@type': 'DigitalDocument',
               name: 'AI Visibility Readiness Checklist™',
-              url: 'https://bethadenai.com/resources/ai-visibility-readiness-checklist',
+              url: 'https://www.bethadenai.com/resources/ai-visibility-readiness-checklist',
             },
           },
         ],
@@ -109,11 +110,11 @@ const homeSchema = {
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/about#person',
+      '@id': 'https://www.bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
-      url: 'https://bethadenai.com/about',
-      worksFor: { '@id': 'https://bethadenai.com/#organization' },
+      url: 'https://www.bethadenai.com/about',
+      worksFor: { '@id': 'https://www.bethadenai.com/#organization' },
       knowsAbout: [
         'AI Visibility',
         'Generative Engine Optimization',
@@ -431,9 +432,14 @@ export default function Home() {
 
                 {/* Card header */}
                 <div className="pb-4 mb-5 border-b border-white/[0.08]">
-                  <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-teal mb-1.5">
-                    What AI Finds
-                  </p>
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <p className="text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-teal">
+                      What AI Finds
+                    </p>
+                    <span className="text-[9px] font-heading font-semibold uppercase tracking-[0.1em] text-silver/40 border border-white/10 rounded px-1.5 py-0.5 leading-none">
+                      Illustrative Example
+                    </span>
+                  </div>
                   <p className="font-heading font-semibold text-sm text-white leading-snug">
                     Your Business Through AI&apos;s Eyes
                   </p>

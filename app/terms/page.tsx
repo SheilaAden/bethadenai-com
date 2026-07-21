@@ -8,11 +8,11 @@ import { Breadcrumb } from '@/components/global/Breadcrumb'
    ───────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'Terms of Use — Beth Aden AI',
+  title: 'Terms of Use',
   description:
     'Terms of use for bethadenai.com and Beth Aden AI services.',
   alternates: {
-    canonical: 'https://bethadenai.com/terms',
+    canonical: 'https://www.bethadenai.com/terms',
   },
   robots: {
     index: false,
@@ -34,13 +34,13 @@ const termsSchema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Terms of Use',
-          item: 'https://bethadenai.com/terms',
+          item: 'https://www.bethadenai.com/terms',
         },
       ],
     },

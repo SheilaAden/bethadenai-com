@@ -8,11 +8,11 @@ import { Section } from '@/components/global/Section'
    ───────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'AI Visibility for Addiction Treatment & Recovery Centers | Beth Aden AI',
+  title: 'AI Visibility for Addiction Treatment & Recovery Centers',
   description:
     'When families ask ChatGPT for help finding treatment, does AI name your program — or your competitor? Beth Aden AI helps recovery centers become visible in AI search.',
   alternates: {
-    canonical: 'https://bethadenai.com/recovery',
+    canonical: 'https://www.bethadenai.com/recovery',
   },
 }
 
@@ -30,21 +30,21 @@ const recoverySchema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'AI Visibility for Recovery Centers',
-          item: 'https://bethadenai.com/recovery',
+          item: 'https://www.bethadenai.com/recovery',
         },
       ],
     },
     {
       '@type': 'Service',
-      '@id': 'https://bethadenai.com/recovery#service',
+      '@id': 'https://www.bethadenai.com/recovery#service',
       name: 'AI Visibility Audit for Addiction Treatment and Recovery Programs',
-      provider: { '@id': 'https://bethadenai.com/#organization' },
+      provider: { '@id': 'https://www.bethadenai.com/#organization' },
       description:
         'AI visibility audit for addiction treatment centers, sober living homes, and behavioral health programs — assessing and improving how AI systems like ChatGPT, Perplexity, and Google AI find and recommend recovery resources to families in crisis.',
       serviceType: 'AI Visibility Audit',
@@ -52,27 +52,27 @@ const recoverySchema = {
         '@type': 'Country',
         name: 'United States',
       },
-      url: 'https://bethadenai.com/recovery',
+      url: 'https://www.bethadenai.com/recovery',
       offers: {
         '@type': 'Offer',
         price: '500',
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
-        url: 'https://bethadenai.com/recovery',
+        url: 'https://www.bethadenai.com/recovery',
       },
     },
     {
       '@type': 'Organization',
-      '@id': 'https://bethadenai.com/#organization',
+      '@id': 'https://www.bethadenai.com/#organization',
       name: 'Beth Aden AI',
-      url: 'https://bethadenai.com',
+      url: 'https://www.bethadenai.com',
     },
     {
       '@type': 'Person',
-      '@id': 'https://bethadenai.com/about#person',
+      '@id': 'https://www.bethadenai.com/about#person',
       name: 'Beth Aden',
       jobTitle: 'AI Visibility Strategist',
-      worksFor: { '@id': 'https://bethadenai.com/#organization' },
+      worksFor: { '@id': 'https://www.bethadenai.com/#organization' },
     },
   ],
 }

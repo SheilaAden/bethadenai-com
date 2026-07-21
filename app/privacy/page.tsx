@@ -8,11 +8,11 @@ import { Breadcrumb } from '@/components/global/Breadcrumb'
    ───────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Beth Aden AI',
+  title: 'Privacy Policy',
   description:
     'Privacy policy for bethadenai.com. Learn how Beth Aden AI collects, uses, and protects your information.',
   alternates: {
-    canonical: 'https://bethadenai.com/privacy',
+    canonical: 'https://www.bethadenai.com/privacy',
   },
   robots: {
     index: false,
@@ -34,13 +34,13 @@ const privacySchema = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://bethadenai.com/',
+          item: 'https://www.bethadenai.com/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Privacy Policy',
-          item: 'https://bethadenai.com/privacy',
+          item: 'https://www.bethadenai.com/privacy',
         },
       ],
     },
