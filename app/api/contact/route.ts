@@ -48,6 +48,7 @@ async function saveLeadToVisibilityOS(payload: ContactPayload): Promise<LeadSync
         p_source_url: 'https://bethadenai.com/contact',
       }),
       cache: 'no-store',
+      signal: AbortSignal.timeout(4000),
     })
 
     const detail = await response.text()
@@ -181,21 +182,10 @@ export async function POST(request: NextRequest) {
 
     const leadSync = await saveLeadToVisibilityOS({ name, business, email, reason, message })
 
-    console.log('[contact] Submission processed.', {
-      to: toEmail,
-      subject,
-      replyTo: email,
-      leadSync,
-    })
-
     if (!leadSync.ok) {
-      return NextResponse.json(
-        {
-          error: 'Your message was emailed, but the lead record could not be saved.',
-          leadSync,
-        },
-        { status: 502 }
-      )
+      console.warn('[contact] Inquiry email sent, but lead tracking failed.', {
+        status: leadSync.status,
+      })
     }
 
     return NextResponse.json({ success: true, leadSync })
