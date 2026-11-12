@@ -13,6 +13,7 @@ const stages = [
     owner: 'Web lead',
     next: 'Use the confirmed counts to set availability and run a test checkout.',
     waiting: 'Launch lead, for the checkout go-ahead.',
+    handoff: { update: 'Checkout test result', to: 'Launch lead' },
   },
   {
     name: 'Inventory',
@@ -21,6 +22,7 @@ const stages = [
     owner: 'Inventory lead',
     next: 'Verify launch stock and share the count with the web and fulfillment teams.',
     waiting: 'Website and fulfillment, for the confirmed quantities.',
+    handoff: { update: 'Confirmed stock counts', to: 'Website and Fulfillment' },
   },
   {
     name: 'Fulfillment',
@@ -29,15 +31,17 @@ const stages = [
     owner: 'Fulfillment lead',
     next: 'Pack a test order and verify the label, shipping rate, and tracking update.',
     waiting: 'Launch lead, for confirmation that orders are ready to ship.',
+    handoff: { update: 'Shipping test result', to: 'Launch lead' },
   },
 ]
 
 export function LaunchWorkflow() {
-  const [active, setActive] = useState(0)
+  const [selection, setSelection] = useState<number | null>(null)
+  const active = selection ?? 0
   const stage = stages[active]
 
   return (
-    <Section background="navy" id="launch-workflow" className="text-white">
+    <Section background="navy" id="launch-workflow" className="scroll-mt-[72px] text-white">
       <Container>
         <div className={styles.layout}>
           <div>
@@ -54,7 +58,7 @@ export function LaunchWorkflow() {
                   aria-pressed={index === active}
                   aria-controls="launch-workflow-detail"
                   className={styles.card}
-                  onClick={() => setActive(index)}
+                  onClick={() => setSelection(index)}
                 >
                   <span className={styles.name}>{name}</span>
                   <span className={styles.status}>{status}</span>
@@ -71,6 +75,19 @@ export function LaunchWorkflow() {
               <div><dt>Next step</dt><dd>{stage.next}</dd></div>
               <div><dt>Waiting on it</dt><dd>{stage.waiting}</dd></div>
             </dl>
+
+            <div key={active} className={styles.handoff}>
+              <p className={styles.handoffTitle}>Next handoff</p>
+              <p className={styles.handoffUpdate}>{stage.handoff.update}</p>
+              <div className={styles.route}>
+                <span>{stage.name}</span>
+                <span className={styles.track} aria-hidden="true">
+                  {selection !== null && <span className={styles.signal} />}
+                </span>
+                <span className="sr-only">to</span>
+                <span>{stage.handoff.to}</span>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
