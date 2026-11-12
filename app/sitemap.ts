@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getAllArticles } from '@/lib/articles'
+import { selectedWork } from '@/lib/operations'
 
 /* ─────────────────────────────────────────────
    SITEMAP.XML
@@ -37,5 +38,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...articleRoutes]
+  const caseStudyRoutes: MetadataRoute.Sitemap = selectedWork.map(({ slug }) => ({
+    url: `${BASE_URL}/work/${slug}`,
+  }))
+
+  return [...staticRoutes, ...caseStudyRoutes, ...articleRoutes]
 }

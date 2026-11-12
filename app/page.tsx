@@ -22,12 +22,12 @@ export default function Home() {
               Beth Aden · Strategic Operations &amp; AI Systems Partner
             </p>
             <h1 className="max-w-3xl text-4xl tracking-tight sm:text-5xl lg:text-6xl">
-              I help businesses get important work unstuck.
+              I bring order to chaos and get the work moving.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-graphite">
-              When a launch, a bid, or a change in operations has five people involved and nobody has the whole picture,
-              I step in. I get clear on what needs to happen, who owns it, and what’s holding it up. Then I build the
-              workflows, reporting, and practical AI tools that help the team get it done.
+              When priorities are competing and nobody has the whole picture, I step in as the central point between
+              leadership and the teams doing the work. I turn decisions into clear owners, deadlines, and workflows
+              so launches go out, bids get ready, and day-to-day work keeps moving.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contact" className="rounded-md bg-[#006b65] px-5 py-3 font-semibold text-white hover:bg-[#005650]">
@@ -69,9 +69,9 @@ export default function Home() {
         <Container>
           <h2 className="text-3xl md:text-4xl">Selected work</h2>
           <div className="my-8 grid gap-8 md:grid-cols-2">
-            {selectedWork.map(({ title, description }) => (
+            {selectedWork.map(({ slug, title, description }) => (
               <article key={title} className="border-t border-navy/20 pt-5">
-                <h3 className="text-xl">{title}</h3>
+                <h3 className="text-xl"><Link href={`/work/${slug}`} className="underline-offset-4 hover:underline">{title}</Link></h3>
                 <p className="mt-3 text-graphite">{description}</p>
               </article>
             ))}
