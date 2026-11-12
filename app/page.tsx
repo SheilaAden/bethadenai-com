@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Container } from '@/components/global/Container'
 import { CTABlock } from '@/components/global/CTABlock'
 import { LaunchWorkflow } from '@/components/global/LaunchWorkflow'
+import { OwnerKnowledgeOffer } from '@/components/global/OwnerKnowledgeOffer'
 import { Section } from '@/components/global/Section'
 import { operationsDescription, operationsServices, selectedWork } from '@/lib/operations'
 
@@ -46,6 +47,8 @@ export default function Home() {
         </Container>
       </Section>
 
+      <OwnerKnowledgeOffer />
+
       <LaunchWorkflow />
 
       <Section>
@@ -61,6 +64,21 @@ export default function Home() {
                 </Link>
               </article>
             ))}
+          </div>
+          <div className="mt-10 border-t border-silver pt-6">
+            <h3 className="text-xl">What’s stuck?</h3>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {[
+                { reason: 'project-coordination', label: 'My project is stalled' },
+                { reason: 'workflow-systems', label: 'Our handoffs keep breaking' },
+                { reason: 'operations-support', label: 'I need ongoing operations support' },
+              ].map(({ reason, label }) => (
+                <Link key={reason} href={`/contact?reason=${reason}#contact-form`}
+                  className="rounded-md border border-navy/25 px-4 py-2.5 font-semibold text-[#006b65] hover:bg-silver">
+                  {label}
+                </Link>
+              ))}
+            </div>
           </div>
         </Container>
       </Section>
