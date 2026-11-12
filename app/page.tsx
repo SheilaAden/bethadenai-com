@@ -16,19 +16,18 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Section className="border-b border-silver">
-        <Container className="grid items-center gap-12 lg:grid-cols-[1.35fr_1fr] lg:gap-16">
+      <section className="border-b border-silver bg-cloud py-10 md:py-14">
+        <Container className="grid items-center gap-8 lg:grid-cols-[1.35fr_1fr] lg:gap-16">
           <div>
             <p className="mb-5 text-sm font-semibold tracking-wide text-[#006b65]">
               Beth Aden · Strategic Operations &amp; AI Systems Partner
             </p>
             <h1 className="max-w-3xl text-4xl tracking-tight sm:text-5xl lg:text-6xl">
-              I bring order to chaos and get the work moving.
+              When everything runs through you, I help your team move the work forward.
             </h1>
             <p className="mt-6 max-w-xl text-lg text-graphite">
-              When priorities are competing and nobody has the whole picture, I step in as the central point between
-              leadership and the teams doing the work. I turn decisions into clear owners, deadlines, and workflows
-              so launches go out, bids get ready, and day-to-day work keeps moving.
+              I step in when a launch is stuck, deadlines are slipping, or your team keeps coming back to you for the same
+              decisions. I get clear on who owns what and build workflows your team can actually run.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contact" className="rounded-md bg-[#006b65] px-5 py-3 font-semibold text-white hover:bg-[#005650]">
@@ -45,7 +44,7 @@ export default function Home() {
               className="object-cover object-center" />
           </div>
         </Container>
-      </Section>
+      </section>
 
       <OwnerKnowledgeOffer />
 
