@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Container } from '@/components/global/Container'
 import { CTABlock } from '@/components/global/CTABlock'
+import { LaunchWorkflow } from '@/components/global/LaunchWorkflow'
 import { Section } from '@/components/global/Section'
 import { operationsDescription, operationsServices, selectedWork } from '@/lib/operations'
 
@@ -44,6 +45,8 @@ export default function Home() {
           </div>
         </Container>
       </Section>
+
+      <LaunchWorkflow />
 
       <Section>
         <Container>
