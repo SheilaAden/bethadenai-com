@@ -9,7 +9,14 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contact' },
 }
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: {
+  searchParams: Promise<{ reason?: string | string[] }>
+}) {
+  const { reason } = await searchParams
+  const initialReason = typeof reason === 'string' && [
+    'project-coordination', 'workflow-systems', 'operations-support',
+  ].includes(reason) ? reason : ''
+
   return (
     <Section>
       <Container className="grid items-start gap-10 lg:grid-cols-[1fr_1.15fr]">
@@ -26,7 +33,7 @@ export default function ContactPage() {
             </a>.
           </p>
         </div>
-        <ContactForm />
+        <ContactForm key={initialReason} initialReason={initialReason} />
       </Container>
     </Section>
   )

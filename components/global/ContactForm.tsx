@@ -10,7 +10,7 @@ import { useState, FormEvent } from 'react'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
-export function ContactForm() {
+export function ContactForm({ initialReason = '' }: { initialReason?: string }) {
   const [status, setStatus] = useState<FormStatus>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -78,7 +78,7 @@ export function ContactForm() {
   return (
     <div
       id="contact-form"
-      className="bg-cloud rounded-lg p-6 md:p-8 border border-silver"
+      className="scroll-mt-24 bg-cloud rounded-lg p-6 md:p-8 border border-silver"
     >
       <p className="font-heading font-semibold text-navy text-base mb-5">
         Send a message
@@ -157,7 +157,7 @@ export function ContactForm() {
             id="contact-reason"
             name="reason"
             required
-            defaultValue=""
+            defaultValue={initialReason}
             className="w-full px-4 py-3 rounded-md border border-silver bg-white text-navy text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent transition-colors appearance-none"
           >
             <option value="" disabled>
