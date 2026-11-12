@@ -47,16 +47,26 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
       <Section>
         <Container className="grid gap-10 lg:grid-cols-[1fr_1fr]">
           <div className="space-y-8">
-            {[
-              { heading: 'What was happening', body: study.situation },
-              { heading: 'What I owned', body: study.role },
-              { heading: 'What the team delivered', body: study.outcome },
-            ].map(({ heading, body }) => (
-              <section key={heading}>
-                <h2 className="text-2xl">{heading}</h2>
-                <p className="mt-3 max-w-xl text-graphite">{body}</p>
-              </section>
-            ))}
+            <section>
+              <h2 className="text-2xl">What was happening</h2>
+              <p className="mt-3 max-w-xl text-graphite">{study.situation}</p>
+            </section>
+            <section>
+              <h2 className="text-2xl">What I owned</h2>
+              <p className="mt-3 max-w-xl text-graphite">{study.role}</p>
+            </section>
+            {slug === 'product-relaunch' && (
+              <figure className="border-l-4 border-teal bg-silver px-5 py-4">
+                <blockquote className="text-xl font-semibold">
+                  “Astute business leader who understands both strategy and execution”
+                </blockquote>
+                <figcaption className="mt-2 text-sm text-graphite">Michael Pekkarinen</figcaption>
+              </figure>
+            )}
+            <section>
+              <h2 className="text-2xl">What the team delivered</h2>
+              <p className="mt-3 max-w-xl text-graphite">{study.outcome}</p>
+            </section>
           </div>
           <section className="self-start rounded-xl border border-silver bg-white p-5 sm:p-7">
             <h2 className="text-2xl">Example handoff tracker</h2>

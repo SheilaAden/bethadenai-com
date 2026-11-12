@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Container } from '@/components/global/Container'
 import { CTABlock } from '@/components/global/CTABlock'
+import { OwnerKnowledgeOffer } from '@/components/global/OwnerKnowledgeOffer'
 import { Section } from '@/components/global/Section'
 import { operationsServices } from '@/lib/operations'
 
@@ -21,6 +22,8 @@ export default function ServicesPage() {
           </p>
         </Container>
       </Section>
+      <OwnerKnowledgeOffer />
+
       <Section>
         <Container className="space-y-10">
           {operationsServices.map(({ id, title, description, deliverables }) => (
