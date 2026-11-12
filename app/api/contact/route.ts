@@ -18,54 +18,6 @@ interface ContactPayload {
   message?: string
 }
 
-type LeadSyncResult = {
-  ok: boolean
-  status?: number
-  detail: string
-}
-
-const VISIBILITY_OS_RPC_URL =
-  'https://ixbfjhnyazbvbwuujefz.supabase.co/rest/v1/rpc/submit_website_lead'
-
-const VISIBILITY_OS_PUBLISHABLE_KEY =
-  'sb_publishable_tF7eX37pDljZrj_WzccsiA_tJpx-9RL'
-
-async function saveLeadToVisibilityOS(payload: ContactPayload): Promise<LeadSyncResult> {
-  try {
-    const response = await fetch(VISIBILITY_OS_RPC_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        apikey: VISIBILITY_OS_PUBLISHABLE_KEY,
-        Authorization: `Bearer ${VISIBILITY_OS_PUBLISHABLE_KEY}`,
-      },
-      body: JSON.stringify({
-        p_name: payload.name,
-        p_business: payload.business,
-        p_email: payload.email,
-        p_reason: payload.reason,
-        p_message: payload.message ?? null,
-        p_source_url: 'https://bethadenai.com/contact',
-      }),
-      cache: 'no-store',
-      signal: AbortSignal.timeout(4000),
-    })
-
-    const detail = await response.text()
-
-    return {
-      ok: response.ok,
-      status: response.status,
-      detail,
-    }
-  } catch (error) {
-    return {
-      ok: false,
-      detail: error instanceof Error ? error.message : 'Unknown database request error',
-    }
-  }
-}
-
 export async function POST(request: NextRequest) {
   try {
     const body: ContactPayload = await request.json()
@@ -180,15 +132,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const leadSync = await saveLeadToVisibilityOS({ name, business, email, reason, message })
-
-    if (!leadSync.ok) {
-      console.warn('[contact] Inquiry email sent, but lead tracking failed.', {
-        status: leadSync.status,
-      })
-    }
-
-    return NextResponse.json({ success: true, leadSync })
+    return NextResponse.json({ success: true })
   } catch (error) {
     console.error('[contact] Unexpected error:', error)
     return NextResponse.json(
