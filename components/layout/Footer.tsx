@@ -1,19 +1,18 @@
 import Link from 'next/link'
+import { operationsServices } from '@/lib/operations'
 
 const footerNav = [
   { label: 'Services',              href: '/services' },
-  { label: 'AI Visibility Library', href: '/resources' },
+  { label: 'Selected Work', href: '/work' },
   { label: 'Speaking',              href: '/speaking' },
   { label: 'About',                 href: '/about' },
   { label: 'Contact',               href: '/contact' },
 ]
 
-const serviceLinks = [
-  { label: 'AI Visibility Audit',                href: '/services/ai-visibility-audit' },
-  { label: 'AI Strategy',                        href: '/services/ai-strategy' },
-  { label: 'AI Implementation',                  href: '/services/ai-implementation' },
-  { label: 'AI Visibility for Recovery Centers', href: '/recovery' },
-]
+const serviceLinks = operationsServices.map(({ id, title }) => ({
+  label: title,
+  href: `/services#${id}`,
+}))
 
 /**
  * Site footer — navy background, full-width.
@@ -40,7 +39,7 @@ export function Footer() {
               Beth Aden AI
             </Link>
             <p className="mt-3 text-sm text-silver/80 leading-relaxed">
-              AI visibility strategy, GEO, AEO, and implementation for small businesses.
+              Strategic operations, workflow systems, and practical AI for businesses.
             </p>
             <address className="not-italic mt-4 space-y-1.5">
               <p className="text-sm">

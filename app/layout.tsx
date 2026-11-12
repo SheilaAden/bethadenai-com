@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Montserrat, Inter } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { operationsDescription } from '@/lib/operations'
 import './globals.css'
 
 /* ─────────────────────────────────────────────
@@ -30,11 +31,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Beth Aden AI — AI Visibility for Small Businesses',
+    default: 'Beth Aden | Strategic Operations & AI Systems Partner',
     template: '%s — Beth Aden AI',
   },
-  description:
-    'Beth Aden AI helps small businesses become visible, understandable, and recommendable across AI search, answer engines, and automated decision systems.',
+  description: operationsDescription,
   metadataBase: new URL('https://www.bethadenai.com'),
   alternates: {
     canonical: '/',
@@ -44,15 +44,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.bethadenai.com',
     siteName: 'Beth Aden AI',
-    title: 'Beth Aden AI — AI Visibility for Small Businesses',
-    description:
-      'Beth Aden AI helps small businesses become visible, understandable, and recommendable across AI search, answer engines, and automated decision systems.',
+    title: 'Beth Aden | Strategic Operations & AI Systems Partner',
+    description: operationsDescription,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Beth Aden AI — AI Visibility for Small Businesses',
-    description:
-      'Beth Aden AI helps small businesses become visible, understandable, and recommendable across AI search, answer engines, and automated decision systems.',
+    title: 'Beth Aden | Strategic Operations & AI Systems Partner',
+    description: operationsDescription,
   },
   robots: {
     index: true,

@@ -8,14 +8,14 @@ import { cn } from '@/lib/utils'
 const navItems = [
   { label: 'Home',                  href: '/' },
   { label: 'Services',              href: '/services' },
-  { label: 'AI Visibility Library', href: '/resources' },
+  { label: 'Selected Work', href: '/work' },
   { label: 'Speaking',              href: '/speaking' },
   { label: 'About',                 href: '/about' },
   { label: 'Contact',               href: '/contact' },
 ]
 
-const CTA_HREF  = '/services/ai-visibility-audit'
-const CTA_LABEL = 'Get Your AI Visibility Audit'
+const CTA_HREF  = '/contact'
+const CTA_LABEL = 'Talk Through What’s Stuck'
 
 /**
  * Site header — sticky, full-width, cloud white background.
@@ -72,7 +72,7 @@ export function Header() {
           <div className="hidden lg:block">
             <Link
               href={CTA_HREF}
-              className="inline-flex items-center px-5 py-2.5 bg-teal text-white text-sm font-heading font-semibold rounded-md hover:bg-[#009991] transition-colors"
+              className="inline-flex items-center px-5 py-2.5 bg-[#006b65] text-white text-sm font-heading font-semibold rounded-md hover:bg-[#005650] transition-colors"
             >
               {CTA_LABEL}
             </Link>
@@ -136,7 +136,7 @@ export function Header() {
               <Link
                 href={CTA_HREF}
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center w-full px-5 py-3 bg-teal text-white font-heading font-semibold text-sm rounded-md hover:bg-[#009991] transition-colors"
+                className="flex items-center justify-center w-full px-5 py-3 bg-[#006b65] text-white font-heading font-semibold text-sm rounded-md hover:bg-[#005650] transition-colors"
               >
                 {CTA_LABEL}
               </Link>

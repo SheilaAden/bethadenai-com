@@ -163,9 +163,9 @@ export function ContactForm() {
             <option value="" disabled>
               Select a reason…
             </option>
-            <option value="ai-visibility-audit">AI Visibility Audit</option>
-            <option value="ai-strategy">AI Strategy</option>
-            <option value="ai-implementation">AI Implementation</option>
+            <option value="operations-support">Ongoing operations support</option>
+            <option value="workflow-systems">Workflow or AI systems build</option>
+            <option value="project-coordination">Launch, bid, or transition coordination</option>
             <option value="speaking-inquiry">Speaking Inquiry</option>
             <option value="general-question">General Question</option>
             <option value="other">Other</option>
@@ -178,14 +178,14 @@ export function ContactForm() {
             htmlFor="contact-message"
             className="block text-sm font-heading font-semibold text-navy mb-1.5"
           >
-            Tell me about your business and what you&#39;re hoping to address
+            What’s stuck, and what needs to happen next?
             <span className="ml-1 text-xs text-graphite/50 font-normal">(optional)</span>
           </label>
           <textarea
             id="contact-message"
             name="message"
             rows={5}
-            placeholder="A sentence or two about your business and what prompted you to reach out is all you need. You don't have to have everything figured out — just share what's on your mind."
+            placeholder="Share a little about the work, the bottleneck, and any deadline you’re working toward."
             className="w-full px-4 py-3 rounded-md border border-silver bg-white text-navy placeholder-graphite/40 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent transition-colors resize-y"
           />
         </div>
@@ -194,7 +194,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full inline-flex items-center justify-center px-6 py-3.5 bg-teal text-white font-heading font-semibold text-sm rounded-md hover:bg-[#009991] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+          className="w-full inline-flex items-center justify-center px-6 py-3.5 bg-[#006b65] text-white font-heading font-semibold text-sm rounded-md hover:bg-[#005650] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {status === 'loading' ? 'Sending…' : 'Send message'}
         </button>
