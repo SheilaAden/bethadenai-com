@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Container } from '@/components/global/Container'
 import { CTABlock } from '@/components/global/CTABlock'
 import { Section } from '@/components/global/Section'
@@ -17,16 +18,19 @@ export default function WorkPage() {
         <Container>
           <h1 className="text-4xl md:text-5xl">Selected work</h1>
           <p className="mt-5 max-w-2xl text-lg text-graphite">
-            A look at how I coordinate complex work and build systems around what teams actually need.
+            Here’s what it looks like when I step into work with a lot of moving parts, get the right people aligned, and help the team carry it through.
           </p>
         </Container>
       </Section>
       <Section>
         <Container className="grid gap-6 md:grid-cols-3">
-          {selectedWork.map(({ title, description }) => (
+          {selectedWork.map(({ slug, title, description }) => (
             <article key={title} className="rounded-lg border border-silver bg-white p-6">
               <h2 className="text-2xl">{title}</h2>
               <p className="mt-4 text-graphite">{description}</p>
+              <Link href={`/work/${slug}`} aria-label={`Read case study: ${title}`} className="mt-5 inline-block font-semibold text-[#006b65] underline underline-offset-4">
+                Read case study
+              </Link>
             </article>
           ))}
           <article className="rounded-lg border border-silver bg-white p-6">
