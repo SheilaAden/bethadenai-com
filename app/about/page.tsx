@@ -31,9 +31,9 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="relative aspect-[4/3] w-full max-w-lg overflow-hidden rounded-xl bg-silver">
-            <Image src="/images/beth-aden-ai-headshot.png" alt="Beth Aden" fill
-              sizes="(min-width: 1024px) 44vw, (min-width: 600px) 512px, 100vw" className="object-cover object-center" />
+          <div className="relative aspect-[4/5] w-full max-w-[28rem] overflow-hidden rounded-xl bg-silver">
+            <Image src="/images/beth-aden-portrait.webp" alt="Beth Aden" fill
+              sizes="(min-width: 1024px) 44vw, (min-width: 600px) 448px, 100vw" className="object-cover object-center" />
           </div>
         </Container>
       </Section>
