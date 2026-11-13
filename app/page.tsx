@@ -46,7 +46,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <OwnerKnowledgeOffer />
+      <OwnerKnowledgeOffer showHandoff />
 
       <LaunchWorkflow />
 
