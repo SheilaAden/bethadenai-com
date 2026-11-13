@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Container } from '@/components/global/Container'
 import { Section } from '@/components/global/Section'
 
-export function OwnerKnowledgeOffer() {
+export function OwnerKnowledgeOffer({ showHandoff = false }: { showHandoff?: boolean }) {
   return (
     <Section id="owner-knowledge" background="silver" className="scroll-mt-24">
       <Container className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
@@ -27,6 +27,18 @@ export function OwnerKnowledgeOffer() {
           <p className="mt-4 text-graphite">We’ll test the workflow with the people who’ll use it.</p>
         </div>
       </Container>
+      {showHandoff && (
+        <Container className="mt-8">
+          <div className="border-t border-navy/15 pt-6">
+            <h3 className="text-xl">What happens after we build it?</h3>
+            <p className="mt-3 max-w-3xl text-graphite">
+              We start with one process that keeps coming back to you. I build it with you, test it with your team,
+              and show them how to run it. From there, your team can take it over, or you can bring me on for ongoing
+              operations support.
+            </p>
+          </div>
+        </Container>
+      )}
     </Section>
   )
 }
