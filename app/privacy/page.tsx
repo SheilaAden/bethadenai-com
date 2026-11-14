@@ -10,7 +10,7 @@ import { Breadcrumb } from '@/components/global/Breadcrumb'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Privacy policy for bethadenai.com. Learn how Beth Aden AI collects, uses, and protects your information.',
+    'Privacy policy for bethadenai.com. Learn how Beth Aden collects, uses, and protects your information.',
   alternates: {
     canonical: 'https://www.bethadenai.com/privacy',
   },

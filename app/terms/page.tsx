@@ -10,7 +10,7 @@ import { Breadcrumb } from '@/components/global/Breadcrumb'
 export const metadata: Metadata = {
   title: 'Terms of Use',
   description:
-    'Terms of use for bethadenai.com and Beth Aden AI services.',
+    'Terms of use for bethadenai.com and Beth Aden services.',
   alternates: {
     canonical: 'https://www.bethadenai.com/terms',
   },

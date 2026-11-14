@@ -41,9 +41,9 @@ export function Header() {
           <Link
             href="/"
             className="font-heading font-semibold text-xl text-navy hover:text-teal transition-colors"
-            aria-label="Beth Aden AI — home"
+            aria-label="Beth Aden — home"
           >
-            Beth Aden AI
+            Beth Aden
           </Link>
 
           {/* ── Desktop nav ── */}

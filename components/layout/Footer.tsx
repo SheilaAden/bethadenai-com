@@ -34,9 +34,9 @@ export function Footer() {
             <Link
               href="/"
               className="font-heading font-semibold text-xl text-white hover:text-teal transition-colors"
-              aria-label="Beth Aden AI — home"
+              aria-label="Beth Aden — home"
             >
-              Beth Aden AI
+              Beth Aden
             </Link>
             <p className="mt-3 text-sm text-silver/80 leading-relaxed">
               Strategic operations, workflow systems, and practical AI for businesses.
@@ -105,7 +105,7 @@ export function Footer() {
 
         {/* ── Bottom row ── */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-silver/50">
-          <p>© {currentYear} Beth Aden AI. All rights reserved.</p>
+          <p>© {currentYear} Beth Aden. All rights reserved.</p>
           <div className="flex items-center gap-5">
             <Link href="/privacy" className="hover:text-silver/80 transition-colors">
               Privacy Policy

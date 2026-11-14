@@ -26,13 +26,13 @@ const inter = Inter({
 /* ─────────────────────────────────────────────
    DEFAULT METADATA
    Per-page metadata defined in each page.tsx.
-   Title template: "[Page Title] — Beth Aden AI"
+   Title template: "[Page Title] — Beth Aden"
    ───────────────────────────────────────────── */
 
 export const metadata: Metadata = {
   title: {
     default: 'Beth Aden | Strategic Operations & AI Systems Partner',
-    template: '%s — Beth Aden AI',
+    template: '%s — Beth Aden',
   },
   description: operationsDescription,
   metadataBase: new URL('https://www.bethadenai.com'),
@@ -42,15 +42,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.bethadenai.com',
-    siteName: 'Beth Aden AI',
+    siteName: 'Beth Aden',
     title: 'Beth Aden | Strategic Operations & AI Systems Partner',
     description: operationsDescription,
+    images: [{ url: '/images/beth-aden-portrait.webp', alt: 'Beth Aden' }],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Beth Aden | Strategic Operations & AI Systems Partner',
     description: operationsDescription,
+    images: [{ url: '/images/beth-aden-portrait.webp', alt: 'Beth Aden' }],
   },
   robots: {
     index: true,
