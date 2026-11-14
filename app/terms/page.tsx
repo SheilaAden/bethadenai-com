@@ -121,10 +121,10 @@ export default function TermsPage() {
             <h2>Services</h2>
 
             <p>
-              Services provided by Beth Aden AI — including AI Visibility Audits, AI Strategy,
-              and AI Implementation work — are governed by separate client agreements. Nothing
-              on this site creates a service relationship or obligation without a signed
-              agreement.
+              Services provided by Beth Aden AI, including strategic operations support, workflow
+              and systems buildout, and launch, bid, and transition coordination, are governed
+              by separate client agreements. Nothing on this site creates a service
+              relationship or obligation without a signed agreement.
             </p>
 
             <p>
@@ -137,9 +137,8 @@ export default function TermsPage() {
             <p>
               This site and its content are provided &ldquo;as is.&rdquo; I make no warranties, express
               or implied, about the accuracy, completeness, or fitness of any content for a
-              particular purpose. AI visibility, SEO, and related disciplines involve
-              third-party platforms and systems outside my control; outcomes cannot be
-              guaranteed.
+              particular purpose. Some services involve third-party platforms and systems outside
+              my control. Outcomes cannot be guaranteed.
             </p>
 
             <h2>Limitation of Liability</h2>
