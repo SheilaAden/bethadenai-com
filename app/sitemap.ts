@@ -5,7 +5,7 @@ import { selectedWork } from '@/lib/operations'
    SITEMAP.XML
    Next.js metadata route — generates /sitemap.xml at build time.
 
-   Lists current public pages and case studies. Redirected routes
+   Lists current public pages, case studies, and resources. Redirected routes
    and purchase fulfillment pages are intentionally excluded.
    ───────────────────────────────────────────── */
 
@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/contact`, lastModified: now, changeFrequency: 'yearly', priority: 0.6 },
     { url: `${BASE_URL}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
     { url: `${BASE_URL}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${BASE_URL}/resources/what-is-ai-visibility` },
   ]
 
   const caseStudyRoutes: MetadataRoute.Sitemap = selectedWork.map(({ slug }) => ({

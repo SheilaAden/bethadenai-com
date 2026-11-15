@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
       { source: '/recovery', destination: '/services', permanent: true },
       { source: '/resources', destination: '/work', permanent: true },
       {
-        source: '/resources/:slug(what-is-ai-visibility|what-is-geo|what-is-aeo|how-does-chatgpt-decide-which-businesses-to-recommend|why-isnt-my-business-showing-up-in-ai-search|ai-visibility-readiness-checklist)',
+        source: '/resources/:slug(what-is-geo|what-is-aeo|how-does-chatgpt-decide-which-businesses-to-recommend|why-isnt-my-business-showing-up-in-ai-search|ai-visibility-readiness-checklist)',
         destination: '/work',
         permanent: true,
       },

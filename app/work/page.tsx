@@ -42,6 +42,11 @@ export default function WorkPage() {
           </article>
         </Container>
       </Section>
+      <Container className="pb-8">
+        <p className="text-sm text-graphite">
+          Resource · <Link href="/resources/what-is-ai-visibility" className="text-[#006b65] underline underline-offset-4">What is AI visibility?</Link>
+        </p>
+      </Container>
       <CTABlock headline="Tell me what you’re working on"
         primaryCTA={{ text: 'Talk Through What’s Stuck', href: '/contact' }} />
     </>

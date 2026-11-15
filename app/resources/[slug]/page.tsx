@@ -1,12 +1,8 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { getAllArticles, getArticleBySlug, getRelatedArticles } from '@/lib/articles'
-import { ArticleCard } from '@/components/global/ArticleCard'
+import { getAllArticles, getArticleBySlug } from '@/lib/articles'
 import { Container } from '@/components/global/Container'
-import { Section } from '@/components/global/Section'
-import { SectionLabel } from '@/components/global/SectionLabel'
 import { Breadcrumb } from '@/components/global/Breadcrumb'
 import { formatDate } from '@/lib/utils'
 
@@ -69,8 +65,6 @@ export default async function ArticlePage({
   const article = getArticleBySlug(slug)
   if (!article) notFound()
 
-  const relatedArticles = getRelatedArticles(slug, 3)
-
   /* ── Structured Data ── */
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -87,8 +81,8 @@ export default async function ArticlePage({
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'AI Visibility Library',
-            item: 'https://www.bethadenai.com/resources',
+            name: 'Selected Work',
+            item: 'https://www.bethadenai.com/work',
           },
           {
             '@type': 'ListItem',
@@ -131,13 +125,13 @@ export default async function ArticlePage({
         '@type': 'Person',
         '@id': 'https://www.bethadenai.com/about#person',
         name: 'Beth Aden',
-        jobTitle: 'AI Visibility Strategist',
+        jobTitle: 'Strategic Operations & AI Systems Partner',
         worksFor: { '@id': 'https://www.bethadenai.com/#organization' },
       },
       {
         '@type': 'Organization',
         '@id': 'https://www.bethadenai.com/#organization',
-        name: 'Beth Aden AI',
+        name: 'Beth Aden',
         url: 'https://www.bethadenai.com',
       },
     ],
@@ -158,7 +152,7 @@ export default async function ArticlePage({
             <Breadcrumb
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'AI Visibility Library', href: '/resources' },
+                { label: 'Selected Work', href: '/work' },
                 { label: article.title },
               ]}
               light
@@ -226,67 +220,6 @@ export default async function ArticlePage({
           </div>
         </Container>
       </section>
-
-      {/* ── Related Articles (only rendered when related exist) ── */}
-      {relatedArticles.length > 0 && (
-        <Section background="silver">
-          <Container>
-            <SectionLabel>Keep Reading</SectionLabel>
-            <h2 className="font-heading font-semibold text-2xl md:text-3xl text-navy mt-2 mb-8">
-              Related Articles
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {relatedArticles.map((related) => (
-                <ArticleCard
-                  key={related.slug}
-                  slug={related.slug}
-                  title={related.title}
-                  description={related.description}
-                  category={related.category}
-                  badge={related.badge}
-                  readingTime={related.readingTime}
-                />
-              ))}
-            </div>
-          </Container>
-        </Section>
-      )}
-
-      {/* ── Final CTA ── */}
-      <Section background="navy">
-        <Container>
-          <div className="max-w-2xl mx-auto text-center">
-            <SectionLabel light>Ready to Go Beyond the Reading?</SectionLabel>
-            <h2 className="font-heading font-semibold text-3xl md:text-4xl text-white mt-2 mb-5">
-              Find Out Where Your Business Actually Stands in AI Search
-            </h2>
-            <div className="space-y-4 mb-8">
-              <p className="text-base md:text-lg text-silver leading-relaxed">
-                The AI Visibility Audit evaluates your specific business across ChatGPT, Perplexity,
-                Google AI Overviews, and other platforms — documenting what AI systems currently find
-                when they look at you, and delivering a prioritized plan for what to address first.
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <Link
-                href="/services/ai-visibility-audit"
-                className="inline-flex items-center justify-center px-8 py-4 bg-teal text-white font-heading font-semibold text-base rounded-md hover:bg-[#009991] transition-colors"
-              >
-                Get Your AI Visibility Audit
-              </Link>
-              <p className="text-sm text-silver/70">
-                Beth reviews every inquiry personally and responds within 1&#x2013;2 business days.
-              </p>
-              <Link
-                href="/resources"
-                className="text-sm text-silver/60 hover:text-silver underline underline-offset-2 transition-colors"
-              >
-                &#8592; Back to AI Visibility Library
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </Section>
     </>
   )
 }
