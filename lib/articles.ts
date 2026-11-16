@@ -10,7 +10,11 @@ import type { Article, ArticleFrontmatter } from '@/types'
    Called only from server components / static generation.
    ───────────────────────────────────────────── */
 
-const ARTICLES_DIR = path.join(process.cwd(), 'content', 'articles')
+type ArticleCollection = 'articles' | 'operations-articles'
+
+function collectionDirectory(collection: ArticleCollection) {
+  return path.join(process.cwd(), 'content', collection)
+}
 
 /* ── Helpers ── */
 
@@ -27,9 +31,9 @@ function parseArticleFile(filePath: string, slug: string): Article {
   }
 }
 
-function getArticleFiles(): string[] {
-  if (!fs.existsSync(ARTICLES_DIR)) return []
-  return fs.readdirSync(ARTICLES_DIR).filter((f) => /\.mdx?$/.test(f))
+function getArticleFiles(directory: string): string[] {
+  if (!fs.existsSync(directory)) return []
+  return fs.readdirSync(directory).filter((f) => /\.mdx?$/.test(f))
 }
 
 /* ── Public API ── */
@@ -39,11 +43,12 @@ function getArticleFiles(): string[] {
  * Sorted by date descending; falls back to title ascending when date is absent.
  * Content string is excluded — use getArticleBySlug() when you need it.
  */
-export function getAllArticles(): Omit<Article, 'content'>[] {
-  return getArticleFiles()
+export function getAllArticles(collection: ArticleCollection = 'articles'): Omit<Article, 'content'>[] {
+  const directory = collectionDirectory(collection)
+  return getArticleFiles(directory)
     .map((filename) => {
       const slug = toSlug(filename)
-      const filePath = path.join(ARTICLES_DIR, filename)
+      const filePath = path.join(directory, filename)
       const { content: _content, ...meta } = parseArticleFile(filePath, slug)  // eslint-disable-line @typescript-eslint/no-unused-vars
       return meta
     })
@@ -63,11 +68,12 @@ export function getAllArticles(): Omit<Article, 'content'>[] {
  * Tries both .mdx and .md extensions.
  * Returns null if not found or not published.
  */
-export function getArticleBySlug(slug: string): Article | null {
+export function getArticleBySlug(slug: string, collection: ArticleCollection = 'articles'): Article | null {
+  const directory = collectionDirectory(collection)
   const candidates = [`${slug}.mdx`, `${slug}.md`]
 
   for (const filename of candidates) {
-    const filePath = path.join(ARTICLES_DIR, filename)
+    const filePath = path.join(directory, filename)
     if (fs.existsSync(filePath)) {
       const article = parseArticleFile(filePath, slug)
       if (article.status !== 'published') return null

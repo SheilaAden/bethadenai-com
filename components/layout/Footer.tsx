@@ -4,6 +4,7 @@ import { operationsServices } from '@/lib/operations'
 const footerNav = [
   { label: 'Services',              href: '/services' },
   { label: 'Selected Work', href: '/work' },
+  { label: 'Articles', href: '/articles' },
   { label: 'Speaking',              href: '/speaking' },
   { label: 'About',                 href: '/about' },
   { label: 'Contact',               href: '/contact' },
