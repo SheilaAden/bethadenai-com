@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { getAllArticles } from '@/lib/articles'
 import { selectedWork } from '@/lib/operations'
 
 /* ─────────────────────────────────────────────
@@ -18,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/`, lastModified: now, changeFrequency: 'weekly', priority: 1 },
     { url: `${BASE_URL}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/work`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/articles` },
     { url: `${BASE_URL}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/speaking`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/contact`, lastModified: now, changeFrequency: 'yearly', priority: 0.6 },
@@ -30,5 +32,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE_URL}/work/${slug}`,
   }))
 
-  return [...staticRoutes, ...caseStudyRoutes]
+  const articleRoutes = getAllArticles('operations-articles').map(({ slug }) => ({
+    url: `${BASE_URL}/articles/${slug}`,
+  }))
+
+  return [...staticRoutes, ...caseStudyRoutes, ...articleRoutes]
 }

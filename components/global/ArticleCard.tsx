@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 
 interface ArticleCardProps {
   slug: string
+  href?: string
   title: string
   description: string
   category: string
@@ -19,6 +20,7 @@ interface ArticleCardProps {
  */
 export function ArticleCard({
   slug,
+  href = `/resources/${slug}`,
   title,
   description,
   category,
@@ -26,8 +28,6 @@ export function ArticleCard({
   readingTime,
   className,
 }: ArticleCardProps) {
-  const href = `/resources/${slug}`
-
   return (
     <article
       className={cn(
