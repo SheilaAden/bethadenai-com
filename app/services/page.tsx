@@ -4,11 +4,11 @@ import { Container } from '@/components/global/Container'
 import { CTABlock } from '@/components/global/CTABlock'
 import { OwnerKnowledgeOffer } from '@/components/global/OwnerKnowledgeOffer'
 import { Section } from '@/components/global/Section'
-import { operationsServices } from '@/lib/operations'
+import { operationsServices, selectedWork } from '@/lib/operations'
 
 export const metadata: Metadata = {
   title: 'Strategic Operations & AI Systems Services',
-  description: 'Hands-on operations support, workflow and AI systems buildout, and coordination for launches, bids, and business transitions.',
+  description: 'Hands-on operations consulting for stalled projects, launches, bids, and business transitions. Beth Aden helps teams clarify ownership and build workflows they can run.',
   alternates: { canonical: '/services' },
 }
 
@@ -53,6 +53,31 @@ export default function ServicesPage() {
         </Container>
       </Section>
       <OwnerKnowledgeOffer />
+
+      <Section>
+        <Container>
+          <h2 id="stalled-projects" className="scroll-mt-24 text-3xl md:text-4xl">
+            Hands-on operations consulting for stalled projects
+          </h2>
+          <p className="mt-4 max-w-2xl text-graphite">
+            I help business owners get stalled launches, bids, and transitions moving again.
+            When deadlines slip and decisions keep landing back on your desk, I work with your
+            team to find where work is getting stuck, clarify who owns the next step, and
+            put a workflow in place that your team can keep running.
+          </p>
+          <ul aria-label="Stalled project case studies" className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
+            {selectedWork
+              .filter(({ slug }) => slug === 'product-relaunch' || slug === 'paving-bid-and-transition')
+              .map(({ slug, title }) => (
+                <li key={slug}>
+                  <Link href={`/work/${slug}`} className="font-semibold text-[#006b65] underline underline-offset-4">
+                    {title}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </Container>
+      </Section>
 
       <Section>
         <Container className="space-y-10">
